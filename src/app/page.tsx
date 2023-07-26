@@ -1,10 +1,11 @@
 import Image from 'next/image'
-import { HomePages } from './pages/pages.exports'
+import { HomePages } from './component/component.exports'
+import RootLayout from './layout'
 
 export default function Home() {
   return (
-    <main className="flex w-full h-screen flex items-center justify-center p-20 bg-palette-1 mx-auto">
-      <HomePages/>
-    </main>
+      <RootLayout showNavbarAndFooter={true}>
+          <HomePages/>
+      </RootLayout>
   )
 }

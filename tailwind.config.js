@@ -18,6 +18,7 @@ module.exports = {
         "palette-3":"#065b83",
         "palette-4":"#1a3a6f",
         "palette-5":"#20285c",
+        "instagram-color":"#bc2a8d"
       }
     },
   },
