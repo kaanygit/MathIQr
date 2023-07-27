@@ -6,7 +6,7 @@ import {FiTwitter,FiInstagram} from 'react-icons/fi';
 const Footer=()=>{
     return(
         <>
-            <footer className="p-20 flex justify-center items-center text-center w-full h-full text-2xl">
+            <footer className="p-20 flex justify-center items-center text-center w-full h-full text-2xl bg-gray-800 text-white sticky">
                     <div className="w-full h-full ">
                         <div className="grid grid-cols-3  w-full h-full">
                             <div className="w-full h-full">
