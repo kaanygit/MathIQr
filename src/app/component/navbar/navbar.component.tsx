@@ -6,7 +6,7 @@ import Link from "next/link"
 const Navbar=()=>{
     return(
         <>
-            <nav className="w-full  mx-auto justify-center items-center text-center flex bg-palette-3 px-16 py-8 fixed z-50">
+            <nav className="w-full  mx-auto justify-center items-center text-center flex bg-palette-3 px-16 py-8 sticky z-50">
                 <div className="w-full h-full flex">
                     <div className="w-full h-full grid grid-cols-2 text-2xl font-bold tracking-widest">
                         <div>
