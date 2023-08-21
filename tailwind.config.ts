@@ -1,9 +1,14 @@
-/** @type {import('tailwindcss').Config} */
-module.exports = {
+import type { Config } from 'tailwindcss'
+const withMT = require("@material-tailwind/react/utils/withMT");
+module.exports =withMT ({
   content: [
     './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
     './src/components/**/*.{js,ts,jsx,tsx,mdx}',
     './src/app/**/*.{js,ts,jsx,tsx,mdx}',
+    './src/**/*.{tsx,ts,js,jsx}',
+    "./node_modules/nod/@material-tailwind/react/components/**/*.{js,ts,jsx,tsx}",
+    "./node_modules/@material-tailwind/react/theme/components/**/*.{js,ts,jsx,tsx}",
+  
   ],
   theme: {
     extend: {
@@ -13,14 +18,9 @@ module.exports = {
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
       },
       colors:{
-        "palette-1":"#9fb2c2",
-        "palette-2":"#1d7393",
-        "palette-3":"#065b83",
-        "palette-4":"#1a3a6f",
-        "palette-5":"#20285c",
-        "instagram-color":"#bc2a8d"
+        "twitter-color":"#00acee"
       }
     },
   },
   plugins: [],
-}
+})
