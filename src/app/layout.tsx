@@ -1,28 +1,28 @@
+import { FooterComponent, NavbarComponent } from '@/component/component.export'
 import './globals.css'
 import type { Metadata } from 'next'
-import { Mulish } from 'next/font/google'
-import { Footer, Navbar } from './component/component.exports'
+import { Roboto_Mono } from 'next/font/google'
 
-
-const inter =Mulish({ subsets: ['latin'] })
+const robotoMono = Roboto_Mono({ 
+  weight:'500',subsets: ['latin'] })
 
 export const metadata: Metadata = {
   title: 'MathIQr',
-  description: 'Math learning app',
+  description: 'Math Learning App',
 }
 
 export default function RootLayout({
-  children 
+  children,
 }: {
   children: React.ReactNode
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
-          <Navbar/>
-            {children}
-          <Footer />
-        </body>
+      <body className={robotoMono.className}>
+        <NavbarComponent/>
+        {children}
+        <FooterComponent/>
+      </body>
     </html>
   )
 }

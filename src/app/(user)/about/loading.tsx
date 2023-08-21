@@ -1,13 +1,14 @@
-"use client"
 
-const Loading=()=>{
+
+
+const LoadingAbout:React.FC=()=>{
     return(
-        <>
-            <div className="absolute right-1/2 bottom-1/2  transform translate-x-1/2 translate-y-1/2 h-screen w-full justify-center items-center text-center flex">
-                <div className="border-t-transparent border-solid animate-spin  rounded-full border-blue-400 border-8 h-64 w-64"></div>
-            </div>
-        </>
+        <div className="flex items-center justify-center space-x-2 h-screen">
+            <div className="w-4 h-4 rounded-full animate-pulse dark:bg-blue-400"></div>
+            <div className="w-4 h-4 rounded-full animate-pulse dark:bg-blue-400"></div>
+            <div className="w-4 h-4 rounded-full animate-pulse dark:bg-blue-400"></div>
+        </div>
     )
 }
 
-export default Loading
+export default LoadingAbout
