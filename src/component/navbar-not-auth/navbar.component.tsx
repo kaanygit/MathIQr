@@ -6,7 +6,7 @@ import Link from 'next/link'
 import { useEffect, useState } from 'react';
 import {BiMath,BiMoon, BiSun} from 'react-icons/bi'
 
-const NavbarComponent:React.FC=()=>{
+const NavbarNotAuth:React.FC=()=>{
     const {data:session,status}=useSession();
     const datas: SessionDataInterface[] | null = session?.user ? [session.user] : null;
 
@@ -61,4 +61,4 @@ const NavbarComponent:React.FC=()=>{
     )
 }
 
-export default NavbarComponent
+export default NavbarNotAuth
