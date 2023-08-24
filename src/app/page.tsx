@@ -1,11 +1,29 @@
+"use client"
 import Image from 'next/image'
 import MathCharacter from '../assets/math-home-character.png'
 import TeachersBoard from '../assets/teachers.png'
 import EinstainBoard from '../assets/einstain-board.png'
 import MathTeachers from '../assets/math-teachers.png'
- 
-export default function Home() {
+import Link from 'next/link'
+import {Transition} from '@headlessui/react'
+import { useEffect, useState } from 'react'
+import { useSession } from 'next-auth/react'
+import { redirect } from 'next/navigation'
+import { LoadingComponent } from '@/component/component.export'
+
+export default  function Home() {
+  const [showPageTransition,setShowPageTransition]=useState<boolean>(false);
+  const {data:session,status}=useSession();
+
+
+  useEffect(()=>{
+    setShowPageTransition(true)
+  },[])
+
+
   return (
+    status==="unauthenticated"?(
+    <Transition show={showPageTransition} enter='transition-opacity duration-500' enterFrom='opacity-0' enterTo='opacity-100'>
     <main className="flex flex-col w-full h-full  items-center justify-center px-24 ">
       <div className='w-full flex justify-center items-center pt-24 pb-36'>
         <div className='flex-1 justify-center items-center text-center flex-col flex'>
@@ -15,9 +33,9 @@ export default function Home() {
           <span className='pt-5 text-3xl'>
             Sign up for the app now and start learning math 👇
           </span>
-          <button className='mt-10  text-white text-center rounded-xl py-3 px-10 bg-blue-500'>
+          <Link href="/authentication" className='mt-10  text-white text-center rounded-xl py-3 px-10 bg-blue-500'>
             Sign Up
-          </button>
+          </Link>
         </div>
         <div className='flex-1  justify-center items-center text-center flex'>
           <Image src={MathCharacter} width={500}   alt='Math-Home-Page-Character'/>
@@ -81,5 +99,6 @@ export default function Home() {
         </div>
       </div>
     </main>
+    </Transition>):status==="loading"?(<LoadingComponent/>):(redirect("/dashboard"))
   )
 }
