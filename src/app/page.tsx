@@ -9,6 +9,7 @@ import {Transition} from '@headlessui/react'
 import { useEffect, useState } from 'react'
 import { useSession } from 'next-auth/react'
 import { redirect } from 'next/navigation'
+import { LoadingComponent } from '@/component/component.export'
 
 export default  function Home() {
   const [showPageTransition,setShowPageTransition]=useState<boolean>(false);
@@ -21,7 +22,7 @@ export default  function Home() {
 
 
   return (
-    !session?
+    status==="unauthenticated"?(
     <Transition show={showPageTransition} enter='transition-opacity duration-500' enterFrom='opacity-0' enterTo='opacity-100'>
     <main className="flex flex-col w-full h-full  items-center justify-center px-24 ">
       <div className='w-full flex justify-center items-center pt-24 pb-36'>
@@ -98,6 +99,6 @@ export default  function Home() {
         </div>
       </div>
     </main>
-    </Transition>:redirect("/dashboard")
+    </Transition>):status==="loading"?(<LoadingComponent/>):(redirect("/dashboard"))
   )
 }

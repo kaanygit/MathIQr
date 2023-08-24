@@ -1,17 +1,24 @@
+
 import { LoadingComponent } from "@/component/component.export";
-import { useSession } from "next-auth/react";
+import { getServerSession } from "next-auth";
 import { redirect } from "next/navigation";
 import { ReactNode, Suspense } from "react";
+import { authOptions } from "../api/auth/[...nextauth]/route";
 
 interface Props{
     children:ReactNode
 }
 
-export default function AdminLayout({children}:Props){
-    const {data:session,status}=useSession();
-    const admin=session?.user;
 
-    if(admin?.role==="admin")return <Suspense fallback={<LoadingComponent/>}>{children}</Suspense>
 
-    redirect("/dashboard");
+export default async function AdminLayout({children}:Props){
+
+    const session= await getServerSession(authOptions);
+    const user=session?.user as {role:string} |undefined;
+    const isAdmin=user?.role ==="admin";
+
+
+    if (!isAdmin)redirect("/dashboard");
+
+    return <Suspense fallback={<LoadingComponent />}>{children}</Suspense>;
 }

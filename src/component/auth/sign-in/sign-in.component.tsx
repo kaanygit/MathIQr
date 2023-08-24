@@ -32,8 +32,8 @@ const SignInComponent:React.FC=()=>{
         });
         if(res?.error){
             return console.log(res.error);
-        }
-        router.replace("dashboard");
+        };
+        router.replace("/dashboard");
         handleSignInReset();
     }
     return(
