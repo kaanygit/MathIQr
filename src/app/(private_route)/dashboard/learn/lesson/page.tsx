@@ -2,9 +2,10 @@
 
 
 
+
 const LessonPage:React.FC=()=>{
     return(
-        <div>Lesson Page</div>
+        <div>Ai Lesson</div>
     )
 }
 

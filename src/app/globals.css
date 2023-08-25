@@ -9,6 +9,7 @@ body{
 .animating-image{
     animation: bounce 5s infinite linear;
 }
+
 @keyframes bounce {
     0%,100%{
         transform: translateY(0);

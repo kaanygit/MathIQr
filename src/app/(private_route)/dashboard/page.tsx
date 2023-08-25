@@ -21,8 +21,8 @@ const Dashboard:React.FC=()=>{
     },[])
     return(
         <>
-            <Transition show={showPageTransition} enter='transition-opacity duration-500' enterFrom='opacity-0' enterTo='opacity-100'>
-                <main className='mx-auto w-full h-full justify-center items-center text-center flex flex-col '>
+            <Transition show={showPageTransition} className="-z-50"  enter='transition-opacity duration-500' enterFrom='opacity-0' enterTo='opacity-100'>
+                <div className='mx-auto w-full h-full justify-center items-center text-center flex flex-col '>
                     <div className=' w-full h-full flex flex-row'>
                         <div className='flex-1 flex justify-center items-center text-center font-semibold pl-24 text-4xl'>
                             Hey {user?user[0].name:null}, Welcome, you can continue with the content of learning mathematics again. Remember math isn't terrible 😉
@@ -33,10 +33,10 @@ const Dashboard:React.FC=()=>{
                     </div>
                     <div className='py-24 px-36 bg-gray-200 w-full h-full flex flex-col '>
                         <div className='flex grid grid-cols-3 gap-9 text-2xl'>
-                            <Link href="/dashboard/lesson/teacher" className='flex flex-row justify-center items-center text-center w-full h-full px-10'>
+                            <Link href="/dashboard/community" className='flex flex-row justify-center items-center text-center w-full h-full px-10'>
                                 <div className='flex flex-col p-8'>
-                                    <span className='flex justify-center items-center text-center font-semibold'>Konu Çalış</span>
-                                    <span className='text-xl'>Size özel hazırlanmış olduğumuz notları çalış</span>
+                                    <span className='flex justify-center items-center text-center font-semibold'>Community</span>
+                                    <span className='text-xl'>Send your questions to our community, solve different questions</span>
                                 </div>
                                 <Image className='flex justify-center items-center text-center' src={Teacher} width={300} alt='teacher-dashboard'/>
                             </Link>
@@ -47,7 +47,7 @@ const Dashboard:React.FC=()=>{
                                 </div>
                                 <Image className='flex justify-center items-center text-center' src={QuizSolution} width={300} alt='teacher-dashboard'/>
                             </Link>
-                            <Link href="/dashboard/lesson/ai" className='flex flex-row justify-center items-center text-center w-full h-full px-10'>
+                            <Link href="/dashboard/learn" className='flex flex-row justify-center items-center text-center w-full h-full px-10'>
                                 <div className='flex flex-col p-8'>
                                     <span className='flex justify-center items-center text-center font-semibold'>Yapay Zeka ile Konu Anlatımı</span>
                                     <span className='text-xl'>Yapay zeka yardımıyla daha iyi öğrenin</span>
@@ -65,7 +65,7 @@ const Dashboard:React.FC=()=>{
                             quiz listeleri
                         </div>
                     </div>
-                </main>
+                </div>
             </Transition>
         </>
     )
