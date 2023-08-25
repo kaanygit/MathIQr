@@ -31,9 +31,9 @@ const NavbarAuthentication:React.FC=()=>{
         }
     }
     return(
-        <nav className="w-full h-full mx-auto px-16 py-8 justify-center items-center text-center flex shadow">
-            <div className="flex w-full justify-center items-center text-2xl">
-                <div className="flex-1 flex text-2xl">
+        <div className="w-full h-full mx-auto px-16 py-8 justify-center items-center text-center flex shadow sticky fixed top-0 z-40 overflow-hidden">
+            <div className="flex w-full justify-center items-center text-2xl z-40">
+                <div className="flex-1 flex text-2xl z-40">
                     <span className='text-2xl font-black justify-center items-center text-center flex'><BiMath/></span>
                     <Link href="/dashboard" className='pl-2 font-bold  justify-center items-center text-center flex'>MathIQr</Link>
                     <div className="flex justify-center items-center text-center pl-5 text-2xl">
@@ -73,7 +73,7 @@ const NavbarAuthentication:React.FC=()=>{
                     </div>
                 </div>
             </div>
-        </nav>
+        </div>
     )
 }
 

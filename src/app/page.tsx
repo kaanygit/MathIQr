@@ -24,7 +24,7 @@ export default  function Home() {
   return (
     status==="unauthenticated"?(
     <Transition show={showPageTransition} enter='transition-opacity duration-500' enterFrom='opacity-0' enterTo='opacity-100'>
-    <main className="flex flex-col w-full h-full  items-center justify-center px-24 ">
+    <main id='dashboard' className="flex flex-col w-full h-full  items-center justify-center px-24">
       <div className='w-full flex justify-center items-center pt-24 pb-36'>
         <div className='flex-1 justify-center items-center text-center flex-col flex'>
           <span className='text-5xl'>
