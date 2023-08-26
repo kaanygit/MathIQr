@@ -88,7 +88,7 @@ const SignUpComponent:React.FC=()=>{
                 </div>
                 <div className="flex flex-col">
                     <label className="flex justify-start">Class</label> 
-                    <select name="classing" value={selectedOption} required onChange={handleSelectChange} className="rounded-xl mt-2 px-20 py-2 ">
+                    <select name="classing" value={selectedOption} defaultValue="1" required onChange={handleSelectChange} className="rounded-xl mt-2 px-20 py-2 ">
                         <option value="1">1.Sınıf</option>
                         <option value="2">2.Sınıf</option>
                         <option value="3">3.Sınıf</option>
