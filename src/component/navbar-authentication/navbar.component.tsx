@@ -31,18 +31,18 @@ const NavbarAuthentication:React.FC=()=>{
         }
     }
     return(
-        <div className="w-full h-full mx-auto px-16 py-8 justify-center items-center text-center flex shadow sticky fixed top-0 z-40 overflow-hidden">
+        <div className="w-full h-full mx-auto px-16 py-8 justify-center items-center text-center flex shadow ">
             <div className="flex w-full justify-center items-center text-2xl z-40">
                 <div className="flex-1 flex text-2xl z-40">
                     <span className='text-2xl font-black justify-center items-center text-center flex'><BiMath/></span>
                     <Link href="/dashboard" className='pl-2 font-bold  justify-center items-center text-center flex'>MathIQr</Link>
                     <div className="flex justify-center items-center text-center pl-5 text-2xl">
                         <span className=" font-black"><FaRobot/></span>
-                        <Link href="/dashboard/lesson/ai" className="pl-2">Lesson</Link>
+                        <Link href="/dashboard/learn" className="pl-2">Lesson</Link>
                     </div>
                     <div className="flex justify-center items-center text-center pl-4 text-2xl">
                         <span className=" font-black"><PiExam/></span>
-                        <Link href="/dashboard/lesson/ai" className="pl-3">Exam</Link>
+                        <Link href="/dashboard/quiz" className="pl-3">Exam</Link>
                     </div>
                     <div className="flex justify-center items-center text-center pl-4 text-2xl">
                         <span className=" font-black"><TbMessages/></span>
