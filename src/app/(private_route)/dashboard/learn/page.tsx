@@ -4,7 +4,7 @@ import { Slider } from "@material-tailwind/react"
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react"
 import Link from "next/link";
-import ContentData from '../../../../json/class-and-content.json'
+import ContentData from '../../../../json/learn_page/class-and-content.json'
 import { useSession } from "next-auth/react";
 import { SessionDataInterface } from "../profile/page";
 import { LoadingComponent, LoadingDotComponent } from "@/component/component.export";
