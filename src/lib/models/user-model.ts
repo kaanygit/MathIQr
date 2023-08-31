@@ -1,5 +1,6 @@
 import { Model,models,model,Document,Schema } from "mongoose";
 import bcrypt from 'bcrypt';
+import type { DefaultSession } from 'next-auth';
 
 interface UserDocument extends Document{
     name:string;
@@ -8,6 +9,14 @@ interface UserDocument extends Document{
     email:string;
     password:string;
     role:"admin"|"user";
+}
+
+declare module 'next-auth' {
+  interface Session {
+    user: DefaultSession['user'] & {
+      role: string;
+    };
+  }
 }
 
 interface Methods{
