@@ -13,8 +13,8 @@ interface PageProps{
 
 export default async function AdminRoute({children}:PageProps){
     const session=await getServerSession(authOptions);
-    const datas=await getSession();
-    const roleControl=datas?.user;
+    const roleControl=session?.user;
+    const role=roleControl?.role;
 
     if(session){
         if(roleControl&&roleControl.role==='user')redirect('/dashboard');
