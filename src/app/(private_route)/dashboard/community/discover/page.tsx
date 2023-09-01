@@ -46,7 +46,7 @@ const DiscoverPage:React.FC=()=>{
                         <span>{displayText}</span>
                     </div>
                 </div>
-                <Link href='/dashboard/community/corrections/12312' className="p-3 bg-blue-500 rounded-2xl text-white font-medium my-2 hover:bg-blue-700 transition duration-300 ease-in-out" >Solution Problem</Link>
+                <Link href='/dashboard/community/corrections/solve&_l212f' className="p-3 bg-blue-500 rounded-2xl text-white font-medium my-2 hover:bg-blue-700 transition duration-300 ease-in-out" >Solution Problem</Link>
             </div>
             <div className="w-full h-full flex flex-col justify-center items-center bg-gray-200 mx-auto rounded-2xl">
                 <div className="items-center flex mt-2">
@@ -67,7 +67,7 @@ const DiscoverPage:React.FC=()=>{
                         <span>{displayText}</span>
                     </div>
                 </div>
-                <Link href='/dashboard/community/corrections/12312' className="p-3 bg-blue-500 rounded-2xl text-white font-medium my-2 hover:bg-blue-700 transition duration-300 ease-in-out" >Solution Problem</Link>
+                <Link href='/dashboard/community/corrections/solve&_12312asd' className="p-3 bg-blue-500 rounded-2xl text-white font-medium my-2 hover:bg-blue-700 transition duration-300 ease-in-out" >Solution Problem</Link>
             </div>
             <div className="w-full h-full flex flex-col justify-center items-center bg-gray-200 mx-auto rounded-2xl">
                 <div className="items-center flex mt-2">
@@ -88,7 +88,7 @@ const DiscoverPage:React.FC=()=>{
                         <span>{displayText}</span>
                     </div>
                 </div>
-                <Link href='/dashboard/community/corrections/12312' className="p-3 bg-blue-500 rounded-2xl text-white font-medium my-2 hover:bg-blue-700 transition duration-300 ease-in-out" >Solution Problem</Link>
+                <Link href='/dashboard/community/corrections/solve&_12312asdasv' className="p-3 bg-blue-500 rounded-2xl text-white font-medium my-2 hover:bg-blue-700 transition duration-300 ease-in-out" >Solution Problem</Link>
             </div>
             <div className="w-full h-full flex flex-col justify-center items-center bg-gray-200 mx-auto rounded-2xl">
                 <div className="items-center flex mt-2">
@@ -109,7 +109,7 @@ const DiscoverPage:React.FC=()=>{
                         <span>{displayText}</span>
                     </div>
                 </div>
-                <Link href='/dashboard/community/corrections/12312' className="p-3 bg-blue-500 rounded-2xl text-white font-medium my-2 hover:bg-blue-700 transition duration-300 ease-in-out" >Solution Problem</Link>
+                <Link href='/dashboard/community/corrections/solve&_12312asdasd' className="p-3 bg-blue-500 rounded-2xl text-white font-medium my-2 hover:bg-blue-700 transition duration-300 ease-in-out" >Solution Problem</Link>
             </div>
             <div className="w-full h-full flex flex-col justify-center items-center bg-gray-200 mx-auto rounded-2xl">
                 <div className="items-center flex mt-2">
@@ -130,7 +130,7 @@ const DiscoverPage:React.FC=()=>{
                         <span>{displayText}</span>
                     </div>
                 </div>
-                <Link href='/dashboard/community/corrections/12312' className="p-3 bg-blue-500 rounded-2xl text-white font-medium my-2 hover:bg-blue-700 transition duration-300 ease-in-out" >Solution Problem</Link>
+                <Link href='/dashboard/community/corrections/solve&_12312asdasdasd' className="p-3 bg-blue-500 rounded-2xl text-white font-medium my-2 hover:bg-blue-700 transition duration-300 ease-in-out" >Solution Problem</Link>
             </div>
 
 
