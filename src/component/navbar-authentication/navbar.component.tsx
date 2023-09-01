@@ -46,7 +46,7 @@ const NavbarAuthentication:React.FC=()=>{
                     </div>
                     <div className="flex justify-center items-center text-center pl-4 text-2xl">
                         <span className=" font-black"><TbMessages/></span>
-                        <Link href="/dashboard/community" className="pl-3">Community</Link>
+                        <Link href="/dashboard/community/discover" className="pl-3">Community</Link>
                     </div>
                 </div>
                 <div className="flex-1 flex justify-end items-center text-center text-2xl ">

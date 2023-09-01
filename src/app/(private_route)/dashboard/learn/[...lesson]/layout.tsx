@@ -1,6 +1,6 @@
 import { LoadingComponent } from "@/component/component.export";
 import { ReactNode, Suspense, useReducer } from "react";
-import PageParams from '../../../../../json/params.json'
+import PageParams from '../../../../../json/learn_page/params.json'
 import { useRouter } from "next/router";
 
 

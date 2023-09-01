@@ -15,6 +15,9 @@ declare module 'next-auth' {
   interface Session {
     user: DefaultSession['user'] & {
       role: string;
+      id:string;
+      username:string;
+      classing:string;
     };
   }
 }

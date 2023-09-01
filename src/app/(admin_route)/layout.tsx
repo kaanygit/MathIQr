@@ -7,11 +7,11 @@ import axios from 'axios';
 import { getSession } from "next-auth/react";
 
 
-interface PageProps{
+export interface ChildrenProps{
     children:ReactNode
 }
 
-export default async function AdminRoute({children}:PageProps){
+export default async function AdminRoute({children}:ChildrenProps){
     const session=await getServerSession(authOptions);
     const roleControl=session?.user;
     const role=roleControl?.role;
