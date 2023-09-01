@@ -16,7 +16,9 @@
 /build
 .env
 management.md
-/json
+/learn_page
+/lesson_page
+/quiz_page
 
 # misc
 .DS_Store

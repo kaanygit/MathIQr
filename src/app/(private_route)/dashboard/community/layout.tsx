@@ -6,6 +6,8 @@ import { Option, Select } from '@material-tailwind/react'
 import { ImSearch } from 'react-icons/im'
 import Link from 'next/link'
 
+import SCHOLLCLASS from '../../../../json/scholl-grades.json'
+import SUBJECTLIST from '../../../../json/subject-list.json'
 
 interface ChildrenProps{
     children:ReactNode
@@ -14,7 +16,9 @@ interface ChildrenProps{
 
 export default function CommunityPageLayout({children}:ChildrenProps){
 
-    
+    const schoolGrades:string[] = SCHOLLCLASS
+    const subjectList:string[]=SUBJECTLIST
+
     const handleSearchForm=(e:React.ChangeEvent<HTMLFormElement>)=>{
         e.preventDefault();
     }
@@ -34,31 +38,22 @@ export default function CommunityPageLayout({children}:ChildrenProps){
                     <Link href='/dashboard/community/discover' className='hover:text-blue-500 hover:border-b hover:border-blue-500 hover:border-b-4 transition duration-500 ease-in-out'>Discover</Link>
                     <Link href='/dashboard/community/friends' className='ml-3 hover:text-blue-500 hover:border-b border-blue-500 hover:border-b-4 transition duration-500 ease-in-out'>Friends</Link>
                     <Link href='/dashboard/community/share_post' className='ml-3 hover:text-blue-500 hover:border-b border-blue-500  hover:border-b-4 transition duration-500 ease-in-out'>Share</Link>
+                    <Link href='/dashboard/community/my_problems' className='ml-3 hover:text-blue-500 hover:border-b border-blue-500  hover:border-b-4 transition duration-500 ease-in-out'>My Problems</Link>
                 </div>
                 <div className='flex-1 flex justify-end items-center text-center '>
                     <form className='flex flex-row items-center text-center' onSubmit={handleSearchForm}>
                         <label className='mr-5'>
                             <Select color='blue' label="Select Class">
-                                <Option>1.Sınıf</Option>
-                                <Option>2.Sınıf</Option>
-                                <Option>3.Sınıf</Option>
-                                <Option>4.Sınıf</Option>
-                                <Option>5.Sınıf</Option>
-                                <Option>6.Sınıf</Option>
-                                <Option>7.Sınıf</Option>
-                                <Option>8.Sınıf</Option>
-                                <Option>9.Sınıf</Option>
-                                <Option>10.Sınıf</Option>
-                                <Option>11.Sınıf</Option>
-                                <Option>12.Sınıf</Option>
+                                {schoolGrades.map((schollClass:string,index:number):React.ReactNode=>{
+                                    return <Option key={index} value={schollClass}>{schollClass}</Option>
+                                })}
                             </Select>
                         </label>
                         <label className='mr-5'>
                             <Select color='blue'  label="Select Subject" >
-                                <Option>Konu Seçimi</Option>
-                                <Option>Konu Seçimi</Option>
-                                <Option>Konu Seçimi</Option>
-                                <Option>Konu Seçimi</Option>
+                                {subjectList.map((subject:string,index:number):React.ReactNode=>{
+                                    return <Option key={index} value={subject}>{subject}</Option>
+                                })}
                             </Select>
                         </label>
                         <button type='submit'className='text-xl' ><ImSearch/></button>
