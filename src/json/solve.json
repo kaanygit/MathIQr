@@ -1,0 +1,56 @@
+[
+    {
+      "userPhoto": "user1.jpg",
+      "userName": "User1",
+      "grade": "10",
+      "subject": "Geometric",
+      "creationDate": "2023-09-01",
+      "photos": ["photo1.jpg", "photo2.jpg"],
+      "problemDescription": "Math problem...",
+      "solutions": [
+        {
+          "solverUserName": "Solver1",
+          "grade": "11",
+          "solutionDate": "2023-09-02",
+          "requiredPhotoForSolution": ["photo1.jpg,photo2.png"],
+          "solutionDescription": "Problem solved.",
+          "likeCount": 10,
+          "unlikeCount": 2
+        }
+      ],
+      "areWeFriends": true,
+      "problemCode": "asf1caS"
+    },
+    {
+        "userPhoto": "user3.jpg",
+        "userName": "John Smith",
+        "grade": "12",
+        "subject": "Biology",
+        "creationDate": "2023-09-05",
+        "photos": ["photo3.jpg", "photo4.jpg"],
+        "problemDescription": "Biology question...",
+        "solutions": [
+          {
+            "solverUserName": "Emily Johnson",
+            "grade": "11",
+            "solutionDate": "2023-09-06",
+            "requiredPhotoForSolution": ["photo5.jpg", "photo6.png"],
+            "solutionDescription": "Question solved successfully.",
+            "likeCount": 12,
+            "unlikeCount": 1
+          },
+          {
+            "solverUserName": "Michael Davis",
+            "grade": "12",
+            "solutionDate": "2023-09-07",
+            "requiredPhotoForSolution": ["photo7.jpg", "photo8.png"],
+            "solutionDescription": "Great explanation, well done!",
+            "likeCount": 18,
+            "unlikeCount": 0
+          }
+        ],
+        "areWeFriends": false,
+        "problemCode": "jljn8v"
+      }      
+  ]
+  
