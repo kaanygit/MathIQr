@@ -5,7 +5,6 @@ import QuestionPhoto from '../../../../../assets/math-problem-photo.jpg'
 import { useEffect, useState } from "react"
 import { redirect } from "next/navigation"
 import Link from "next/link"
-import { FaRegCommentDots } from "react-icons/fa"
 import axios from "axios"
 
 
@@ -13,9 +12,14 @@ const DiscoverPage:React.FC=()=>{
 
     useEffect(()=>{
         const desneme=async()=>{
-            const response=await axios.get('http://localhost:3000/api/datacom/addpost');
-            const datas=response.data;
-            console.log(datas);
+            try {
+                const response=await axios.get('http://localhost:3000/api/datacom/addpost');
+                const datas=response.data;
+                console.log(datas);
+                
+            } catch (error) {
+                console.log('Veri Getirilirken Hata Oluştu : ',error)
+            }
     }
     desneme();
     },[])
