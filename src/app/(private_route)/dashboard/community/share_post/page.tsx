@@ -1,14 +1,12 @@
 "use client"
-import { Option, Select, Textarea } from "@material-tailwind/react"
 import { MdOutlineAddPhotoAlternate } from "react-icons/md"
 
 import SCHOLLCLASS from '../../../../../json/scholl-grades.json'
 import SUBJECTLIST from '../../../../../json/subject-list.json'
 import { useRouter } from "next/navigation"
-import { getSession, useSession } from "next-auth/react"
+import { getSession } from "next-auth/react"
 import { useEffect, useState } from "react"
 
-import DenemeResim from '../../../../../assets/aiteacher.png'
 import axios from "axios"
 
 interface SharePostDataInterface{
@@ -17,7 +15,7 @@ interface SharePostDataInterface{
     grade:string,
     subject:string,
     creationDate:Date,
-    photos:string,
+    photos:string[],
     problemDescription:string,
     solutions:any[],
     areWeFriends:boolean,
@@ -29,7 +27,7 @@ const sharePostDataInitialState={
     grade:'',
     subject:'',
     creationDate:new Date(),
-    photos:'',
+    photos:['deneme'],
     problemDescription:'',
     solutions:['deneme'],
     areWeFriends:false,
@@ -38,9 +36,6 @@ const sharePostDataInitialState={
 
 
 const SharePostCommunity:React.FC=()=>{
-    // const {data:session,status}=useSession();
-
-
     const [sharePostData,setSharePostData]=useState<SharePostDataInterface>(sharePostDataInitialState)
     const [selectedOption, setSelectedOption] = useState<string>('');
     const {userPhoto,userName,grade,subject,creationDate,photos,problemDescription,solutions,areWeFriends,problemDomain}=sharePostData
@@ -82,31 +77,26 @@ const SharePostCommunity:React.FC=()=>{
         }
         return code;
     }
-
-    useEffect(()=>{
-        const randomCode = handleDomainGenerator();
-        const setSessionShareData=async()=>{
-            try {
-                const session = await getSession();
-                if (session?.user) {
-                  const randomCode = handleDomainGenerator();
-                  setSharePostData((prevData) => ({
-                    ...prevData,
-                    userName: session.user.username,
-                    userPhoto: "image.jpeg",
-                    photos: "DenemeResim",
-                    problemDomain: randomCode
-                  }));
-                } else {
-                  console.log('Session Gelmedi');
-                }
-              } catch (error) {
+    const randomCode = handleDomainGenerator();
+    const setSessionShareData=async()=>{
+        try {
+            const session = await getSession();
+            if (session?.user) {
+                const randomCode = handleDomainGenerator();
+                setSharePostData((prevData) => ({
+                ...prevData,
+                userName: session.user.username,
+                userPhoto: "image.jpeg",
+                problemDomain: randomCode
+                }));
+            } else {
+                console.log('Session Gelmedi');
+            }
+            } catch (error) {
                 console.log('Error : ', error);
-              }
-        }
-        setSessionShareData();
-
-    },[])
+            }
+    }
+    setSessionShareData();
 
 
     const router=useRouter();
@@ -117,41 +107,42 @@ const SharePostCommunity:React.FC=()=>{
 
     const sharePostForm=async(e:React.ChangeEvent<HTMLFormElement>)=>{
         e.preventDefault();
+        setSessionShareData();
 
         try {   
             console.log(sharePostData);
-            const response =await fetch('/api/community_data/addPost',{
-                method:'POST',
-                headers:{
-                    Accept: 'application/json',
-                    'Content-Type':'application/json',
-                },
+            const response = await fetch('/api/datacom/addpost', {
+                method:"POST",
+                headers: {
+                    'Content-Type': 'application/json', // Başlık ekleyin
+                  },
                 body:JSON.stringify(sharePostData)
-            });
-            if(response.ok){
-                console.log('Veri başarıyla eklendi.');
-            }else{
-                console.error('Veri eklenirken hata oluştu.');
+              });
+
+            if (response.ok) {
+              console.log('Veri başarıyla kaydedildi');
+              handleDomainGenerator();
+            } else {
+              console.error('Veri kaydı sırasında bir hata oluştu');
             }
-            // router.push('/dashboard/community/my_problems')
-        } catch (error) {
-            console.log('Error : ',error)
-        }
+          } catch (error) {
+            console.error('İstek gönderilirken veya işlenirken bir hata oluştu', error);
+          }
     }
     return(
         <main className="mx-auto w-full h-full flex flex-col justify-center items-center  py-6 px-3 shadow-md rounded-2xl" style={{width:"1000px"}}>
             <span className="justify-center w-full items-center text-center text-3xl font-bold text-blue-500 ">Share Your Problems</span>
             <form onSubmit={sharePostForm} className='flex flex-col border-4 rounded-xl w-full p-5 m-5 h-full'>
                 <label className='mr-5 w-full'>
-                    <select color='blue' className="w-full" value={grade} defaultValue="1"onChange={handleSelectChange} required>
-                        {schoolGrades.map((schollClass:string,index:number):React.ReactNode=>{
+                    <select color='blue' className="w-full" defaultValue="1"onChange={handleSelectChange} required>
+                        {schoolGrades.map((schollClass:string,index:number):any=>{
                             return <option key={index} value={schollClass}>{schollClass}</option>
                         })}
                     </select>
                 </label>
                 <label className='mr-5 my-5 w-full'>
-                    <select color='blue' value={subject} className="w-full"  defaultValue="Konu 1" onChange={handleSelectChange2} required>
-                        {subjectList.map((subjects:string,index:number):React.ReactNode=>{
+                    <select color='blue' className="w-full"  defaultValue="Konu 1" onChange={handleSelectChange2} required>
+                        {subjectList.map((subjects:string,index:number):any=>{
                             return <option key={index} value={subjects}>{subjects}</option>
                         })}
                     </select>

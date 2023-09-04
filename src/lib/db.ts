@@ -11,4 +11,5 @@ const startDatabase=async()=>{
     return connectionDB;
 }
 
+
 export default startDatabase;

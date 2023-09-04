@@ -16,7 +16,7 @@ interface ChildrenProps{
 
 export default function CommunityPageLayout({children}:ChildrenProps){
 
-    const schoolGrades:string[] = SCHOLLCLASS
+    const schoolGrades:string[] = SCHOLLCLASS[0]
     const subjectList:string[]=SUBJECTLIST
 
     const handleSearchForm=(e:React.ChangeEvent<HTMLFormElement>)=>{
@@ -43,18 +43,18 @@ export default function CommunityPageLayout({children}:ChildrenProps){
                 <div className='flex-1 flex justify-end items-center text-center '>
                     <form className='flex flex-row items-center text-center' onSubmit={handleSearchForm}>
                         <label className='mr-5'>
-                            <Select color='blue' label="Select Class">
-                                {schoolGrades.map((schollClass:string,index:number):React.ReactNode=>{
-                                    return <Option key={index} value={schollClass}>{schollClass}</Option>
+                            <select color='blue'>
+                                {schoolGrades.map((schollClass:string,index:number):any=>{
+                                    return <option key={index} value={schollClass}>{schollClass}</option>
                                 })}
-                            </Select>
+                            </select>
                         </label>
                         <label className='mr-5'>
-                            <Select color='blue'  label="Select Subject" >
-                                {subjectList.map((subject:string,index:number):React.ReactNode=>{
-                                    return <Option key={index} value={subject}>{subject}</Option>
+                            <select color='blue' >
+                                {subjectList.map((subject:string,index:number):any=>{
+                                    return <option key={index} value={subject}>{subject}</option>
                                 })}
-                            </Select>
+                            </select>
                         </label>
                         <button type='submit'className='text-xl' ><ImSearch/></button>
                     </form>
