@@ -17,8 +17,8 @@ interface SharePostDataInterface{
     creationDate:Date,
     photos:string[],
     problemDescription:string,
-    solutions:any[],
-    areWeFriends:boolean,
+    solutions:string[],
+    areWeFriends:string[],
     problemDomain:string,
 }
 const sharePostDataInitialState={
@@ -27,10 +27,10 @@ const sharePostDataInitialState={
     grade:'',
     subject:'',
     creationDate:new Date(),
-    photos:['deneme'],
+    photos:['deneme',"2","2"],
     problemDescription:'',
-    solutions:['deneme'],
-    areWeFriends:false,
+    solutions:['deneme',"12","21"],
+    areWeFriends:["asd","asdasd","asdasdasd"],
     problemDomain:'',   
 }
 
