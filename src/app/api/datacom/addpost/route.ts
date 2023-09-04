@@ -1,4 +1,4 @@
-import CommunityData from '@/lib/communitypost/comdata';
+import CommunityData from '@/lib/models/comdata';
 import startDatabase from '@/lib/db';
 import { NextResponse } from 'next/server';
 

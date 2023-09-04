@@ -1,5 +1,5 @@
 import startDatabase from "@/lib/db";
-import UserModel from "@/lib/usermodel/user-model";
+import UserModel from "@/lib/models/user-model";
 import { NextResponse } from "next/server";
 
 interface NewUserRequest{
