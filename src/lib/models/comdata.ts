@@ -7,10 +7,10 @@ const communityPostDataSchema=new Schema({
     grade:String,
     subject:String,
     creationDate:Date,
-    photos:[String],
+    photos:[],
     problemDescription:String,
-    solutions:[String],
-    areWeFriends:Boolean,
+    solutions:[],
+    areWeFriends:[],
     problemDomain:String
 },{
     timestamps:true,
