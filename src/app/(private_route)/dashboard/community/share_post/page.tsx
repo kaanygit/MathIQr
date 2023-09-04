@@ -121,7 +121,8 @@ const SharePostCommunity:React.FC=()=>{
 
             if (response.ok) {
               console.log('Veri başarıyla kaydedildi');
-              handleDomainGenerator();
+            //   handleDomainGenerator();
+              setSessionShareData();
             } else {
               console.error('Veri kaydı sırasında bir hata oluştu');
             }
