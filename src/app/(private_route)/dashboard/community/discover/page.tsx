@@ -5,24 +5,22 @@ import QuestionPhoto from '../../../../../assets/math-problem-photo.jpg'
 import { useEffect, useState } from "react"
 import { redirect } from "next/navigation"
 import Link from "next/link"
-import axios from "axios"
 
 
 const DiscoverPage:React.FC=()=>{
-
-    useEffect(()=>{
-        const desneme=async()=>{
-            try {
-                const response=await axios.get('http://localhost:3000/api/datacom/addpost');
-                const datas=response.data;
-                console.log(datas);
+    
+    const desneme=async()=>{
+        try {
+                const response=await fetch('http://localhost:3000/api/datacom/posts',{method:"GET"}).then((res)=>res.json()).then((actualData)=>console.log(actualData));
+                // const datas=response.data;
+                console.log(response);
                 
             } catch (error) {
                 console.log('Veri Getirilirken Hata Oluştu : ',error)
             }
     }
     desneme();
-    },[])
+
     const maxLength:number=90;
     const originalText:string='Ben çok güzel bir insanım Arkadaşlarımla şakayapmayı ve oynamayı seviyorum. Türkiyeyi çok seviyorum. Türkçe öğrenmeyi seviyorum. Türkiyeye seyahat etmek istiyorum. Benim için dua edin'
     const [displayText,setDisplayText]=useState<string>(originalText);

@@ -111,7 +111,7 @@ const SharePostCommunity:React.FC=()=>{
 
         try {   
             console.log(sharePostData);
-            const response = await fetch('/api/datacom/addpost', {
+            const response = await fetch('/api/datacom/posts', {
                 method:"POST",
                 headers: {
                     'Content-Type': 'application/json', // Başlık ekleyin
