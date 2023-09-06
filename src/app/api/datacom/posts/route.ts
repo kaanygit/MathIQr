@@ -13,6 +13,6 @@ export async function POST(request:any){
 
 export async function GET(){
   await startDatabase();
-  const denemeee=await CommunityDataSchema.find();
-  return NextResponse.json({ denemeee });
+  const CommunityPosts=await CommunityDataSchema.find();
+  return NextResponse.json({ CommunityPosts });
 }

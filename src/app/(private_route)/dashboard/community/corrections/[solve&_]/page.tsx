@@ -2,11 +2,14 @@
 import Image from "next/image"
 import QuesitonPhoto from '../../../../../../assets/quizsolution.png'
 import UserPhoto from '../../../../../../assets/user_reset_png.png'
-import React, {ReactNode, useState} from 'react'
+import React, {ReactNode, useEffect, useState} from 'react'
 
 import {BiLike,BiDislike} from 'react-icons/bi'
 import {MdOutlineAddPhotoAlternate} from 'react-icons/md'
 import { Textarea } from "@material-tailwind/react";
+import { useParams } from "next/navigation"
+import { SharePostDataInterface } from "../../discover/page"
+import axios from "axios"
 
 
 interface ParamsProps{
@@ -16,11 +19,34 @@ interface ParamsProps{
 
 const CorrectionsPage:React.FC<ParamsProps>=({params})=>{
     const [openSolutionPlace,setOpenSolutionPlace]=useState<boolean>(false);
+    const [solvePagePostData,setSolvePagePostData]=useState<SharePostDataInterface[]|undefined>(undefined);
+    const [solvePageDataLoading,setSolvePageDataLoading]=useState<boolean>(false);
+
     const date=new Date().toLocaleString();
     console.log(params.corrections);
     console.log(params.corrections);
 
+    const router=useParams();
+    console.log(router);
 
+
+    useEffect(()=>{
+        //discover data fetch
+        const discoverFetchData=async()=>{
+            setSolvePageDataLoading(true);
+            try {
+                const{data:response}=await axios.get('/api/datacom/posts');
+                setSolvePagePostData(response.CommunityPosts);
+                setSolvePageDataLoading(false);
+            } catch (error) {
+                console.log('Veri Getirilirken Hata Oluştu : ',error);
+            }
+        }
+        discoverFetchData();
+    },[])
+    
+    
+    console.log(solvePagePostData)
 
     return (
         <section className="mx-auto w-full h-full flex flex-col justify-center items-center" style={{width:"1000px"}}>

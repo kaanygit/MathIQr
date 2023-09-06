@@ -3,7 +3,7 @@ import { MdOutlineAddPhotoAlternate } from "react-icons/md"
 
 import SCHOLLCLASS from '../../../../../json/scholl-grades.json'
 import SUBJECTLIST from '../../../../../json/subject-list.json'
-import { useRouter } from "next/navigation"
+import { redirect, useRouter } from "next/navigation"
 import { getSession } from "next-auth/react"
 import { useEffect, useState } from "react"
 
@@ -123,6 +123,7 @@ const SharePostCommunity:React.FC=()=>{
               console.log('Veri başarıyla kaydedildi');
             //   handleDomainGenerator();
               setSessionShareData();
+              redirect('/dashboard/community/discover');
             } else {
               console.error('Veri kaydı sırasında bir hata oluştu');
             }
