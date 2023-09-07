@@ -8,11 +8,11 @@ import {BiLike,BiDislike} from 'react-icons/bi'
 import {MdOutlineAddPhotoAlternate} from 'react-icons/md'
 import { Spinner, Textarea } from "@material-tailwind/react";
 import { useParams } from "next/navigation"
-import { SharePostDataInterface } from "../../discover/page"
 import axios from "axios"
 import { LoadingComponent } from "@/component/component.export"
 import Link from "next/link"
 import { getSession } from "next-auth/react"
+import { SharePostDataInterface } from "../../discover/page"
 
 
 interface ParamsProps{
@@ -21,68 +21,60 @@ interface ParamsProps{
     }
 }
 
-interface SolutionsInterface{
-    postId:any;
-    userName:string;
-    grade:string;
-    solutionsDate:Date;
-    solutionsPhotos:string[];
-    solutionsDescription:string;
-    like:number;
-    dissLike:number;
+interface SolutionsInterface {
+    postId: String;
+    userName: String;
+    grade: String;
+    solutionsDate: Date;
+    solutionsPhotos: String[];
+    solutionsDescription: String;
+    like: Number;
+    dissLike: Number;
 }
-interface MatchkedDataInterface{
-    areWeFriends:String[];
-    createdAt:Date;
-    creationDate:Date,
+  
+interface MatchkedDataInterface {
+    _id:string;
+    userPhoto:String;
+    userName:String;
     grade:String;
+    subject:String;
+    creationDate:Date;
     photos:String[];
     problemDescription:String;
+    solutions:SolutionsInterface[];
     problemDomain:String;
-    solutions:SolutionsInterface[]|null,
-    subject:String;
     updatedAt:Date;
-    userName:String;
-    userPhoto:String;
     __v:Number;
-    _id:any;
+    createdAt:Date;
+    areWeFriends:String[];
 }
+  const FormValueInitialState:SolutionsInterface={
+    postId: "",
+    userName: "",
+    grade: "",
+    solutionsDate: new Date(),
+    solutionsPhotos: [],
+    solutionsDescription: "",
+    like: 0,
+    dissLike: 0,
+  }
 
-
-// const SolutionsInitialState:SolutionsInterface={
-//     postId:'',
-//     userName:'',
-//     grade:'',
-//     solutionsDate:new Date(),
-//     solutionsPhotos:['deneme.png','deneme2.png'],
-//     solutionsDescription:'',
-//     like:0,
-//     dissLike:0
-// }
+ 
 const MatchkedDataInitialState:MatchkedDataInterface={
-    areWeFriends:[],
-    createdAt:new Date(),
-    creationDate:new Date(),
-    grade:"",
-    photos:[],
-    problemDescription:"",
-    problemDomain:"",
-    solutions:{
-        postId:'',
-        userName:'',
-        grade:'',
-        solutionsDate:new Date(),
-        solutionsPhotos:[],
-        solutionsDescription:'',
-        like:0,
-        dissLike:0
-    },
-    subject:"",
-    updatedAt:new Date(),
-    userName:"",
-    userPhoto:"",
-    __v:0,
-    _id:"",
+    _id: "",
+    userPhoto: "",
+    userName: "",
+    grade: "",
+    subject: "",
+    creationDate: new Date(),
+    photos: [],
+    problemDescription: "",
+    solutions: [],
+    problemDomain: "",
+    updatedAt: new Date(),
+    __v: 0,
+    createdAt: new Date(),
+    areWeFriends: [],
 }
 
 
@@ -90,17 +82,17 @@ const CorrectionsPage:React.FC<ParamsProps>=({params})=>{
     const paramsValues:string|null=params['solve&_']?params['solve&_'].substring(9):null;
     const [openSolutionPlace,setOpenSolutionPlace]=useState<boolean>(false);
 
-    const [solvePagePostData,setSolvePagePostData]=useState<SharePostDataInterface[]>([]);
+    const [solvePagePostData,setSolvePagePostData]=useState<MatchkedDataInterface[]>([]);
     const [solvePageDataLoading,setSolvePageDataLoading]=useState<boolean>(false);
     const [solvePageForEachFailure,setSolvePageForEachFailure]=useState<boolean>(false);
 
     const [domainParamsValues,setDomainParamsValues]=useState<boolean>(false);
     const [domainValueHave,setDomainValueHave]=useState<boolean>(false); 
-    const [matchedData,setMatchedData]=useState<SharePostDataInterface|undefined>(undefined);
+    const [matchedData,setMatchedData]=useState<MatchkedDataInterface|undefined>(undefined);
 
 
 
-    const [formValue,setFormValue]=useState<SolutionsInterface>(SolutionsInitialState);
+    const [formValue,setFormValue]=useState<SolutionsInterface>(FormValueInitialState);
     const [selectedOption, setSelectedOption] = useState<string|undefined>('');
 
     const {postId,userName,grade,solutionsDate,solutionsPhotos,solutionsDescription,like,dissLike}=formValue;
@@ -268,7 +260,7 @@ const CorrectionsPage:React.FC<ParamsProps>=({params})=>{
                         <div className='flex flex-row w-full'>
                             <span className='flex flex-1 justify-center items-center text-4xl cursor-pointer border-4 mr-2'><MdOutlineAddPhotoAlternate/></span>
                             <div className='flex-1 flex'>
-                                <Textarea label="Solution" size="lg" name="solutionsDescription" rows={12} cols={40} onChange={handleTextAreaChange} value={solutionsDescription}/>
+                                <Textarea label="Solution" size="lg" name="solutionsDescription" rows={12} cols={40} onChange={handleTextAreaChange} value={solutionsDescription.toString()}/>
                             </div>
                         </div>
                         <button type="submit" className="py-3 px-16 bg-blue-500 rounded-2xl text-white font-medium my-5 hover:bg-blue-700 transition duration-300 ease-in-out" >Gönder</button>
@@ -279,7 +271,7 @@ const CorrectionsPage:React.FC<ParamsProps>=({params})=>{
                 
             {matchedData?.solutions && matchedData?.solutions.length>0?(
             <>
-                {/* {matchedData?.solutions.map((solutionData,index:number)=>(
+                {matchedData?.solutions.map((solutionData,index:number)=>(
                     <div className="w-full flex flex-row mb-4" key={index}>
                         <div className="border-4 flex flex-col justify-center w-full p-5 rounded-xl">
                             <div className="flex flex-row justify-between">
@@ -288,24 +280,23 @@ const CorrectionsPage:React.FC<ParamsProps>=({params})=>{
                                         <Image src={UserPhoto} className="rounded-full" width={100} alt="user-corrections-photo"/>
                                     </div>
                                     <div className="flex flex-col justify-start w-full ml-2">
-                                        <Link href={`/dashboard/profile/${matchedData?.solutions[0].userName}`} className="text-xl font-bold">{matchedData?.solutions.userName}</Link>
-                                        <span>{matchedData?.solutions.grade}</span>
-                                        <span>{matchedData?.solutions.subject}</span>
+                                        <Link href={`/dashboard/profile/${matchedData?.solutions[index].userName}`} className="text-xl font-bold">{matchedData?.solutions[index].userName}</Link>
+                                        <span>{matchedData?.solutions[index].grade+"th Grade"}</span>
                                     </div>
                                 </div>
                                 <div className="flex justify-end items-center">
                                     <button className="p-3 bg-blue-500 rounded-2xl text-white font-medium my-2 hover:bg-blue-700 transition duration-300 ease-in-out">Add Friend</button>
                                 </div>
                             </div>
-                            <span className="mt-2">{matchedData?.solutions.solutionsDate.toLocaleString()}</span>
-                            <span className="mt-2 bg-blue-100 p-2 rounded-xl">{matchedData.solutions.solutionsDescription}</span>
+                            {/* <span className="mt-2">{matchedData?.solutions.solutionsDate[index].toLocaleString()}</span> */}
+                            <span className="mt-2 bg-blue-100 p-2 rounded-xl">{matchedData.solutions[index].solutionsDescription}</span>
                         </div>
                         <div className='ml-2 justify-center items-center'>
                             <button className="p-3 bg-blue-500 rounded-2xl text-white font-medium my-5 hover:bg-blue-700 transition duration-300 ease-in-out"><BiLike/></button>
                             <button className="p-3 bg-blue-500 rounded-2xl text-white font-medium my-5 hover:bg-blue-700 transition duration-300 ease-in-out"><BiDislike/></button>
                         </div>
                     </div>
-                ))} */}
+                ))}
             </>
 
             ):(
