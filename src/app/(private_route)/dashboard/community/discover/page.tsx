@@ -20,6 +20,9 @@ export interface SharePostDataInterface{
     problemDescription:String;
     solutions:String[];
     problemDomain:String;
+    updatedAt:Date;
+    __v:Number;
+    createdAt:Date;
 }
 
 
