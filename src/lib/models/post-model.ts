@@ -1,5 +1,14 @@
 import { model,models,Schema,Document,Model } from "mongoose";
 
+interface SolitionsInterface{
+    userName:String;
+    grade:String;
+    solutionsDate:Date;
+    solutionsPhotos:String[];
+    solutionsDescription:String;
+    like:Number;
+    dissLike:Number;
+}
 interface PostDocumentInterface extends Document{
     userPhoto:string;
     userName:string;
@@ -8,7 +17,7 @@ interface PostDocumentInterface extends Document{
     creationDate:Date;
     photos:[];
     problemDescription:string;
-    solutions:[];
+    solutions:SolitionsInterface[]|[];
     areWeFriends:[];
     problemDomain:string;
 }

@@ -7,17 +7,16 @@ import { redirect, useRouter } from "next/navigation"
 import { getSession } from "next-auth/react"
 import { useEffect, useState } from "react"
 
-import axios from "axios"
 
 interface SharePostDataInterface{
-    userPhoto:String,
+    userPhoto:string,
     userName:string,
     grade:string,
     subject:string,
     creationDate:Date,
     photos:string[],
     problemDescription:string,
-    solutions:string[],
+    solutions:any[],
     areWeFriends:string[],
     problemDomain:string,
 }
@@ -29,7 +28,7 @@ const sharePostDataInitialState={
     creationDate:new Date(),
     photos:['deneme',"2","2"],
     problemDescription:'',
-    solutions:['deneme',"12","21"],
+    solutions:[],
     areWeFriends:["asd","asdasd","asdasdasd"],
     problemDomain:'',   
 }

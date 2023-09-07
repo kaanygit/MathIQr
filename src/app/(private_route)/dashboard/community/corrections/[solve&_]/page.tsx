@@ -6,32 +6,140 @@ import React, {ReactNode, useEffect, useState} from 'react'
 
 import {BiLike,BiDislike} from 'react-icons/bi'
 import {MdOutlineAddPhotoAlternate} from 'react-icons/md'
-import { Textarea } from "@material-tailwind/react";
+import { Spinner, Textarea } from "@material-tailwind/react";
 import { useParams } from "next/navigation"
 import { SharePostDataInterface } from "../../discover/page"
 import axios from "axios"
+import { LoadingComponent } from "@/component/component.export"
+import Link from "next/link"
+import { getSession } from "next-auth/react"
 
 
 interface ParamsProps{
-    params:{corrections:string}
+    params:{
+        'solve&_': string;
+    }
+}
+
+interface SolutionsInterface{
+    postId:any;
+    userName:string;
+    grade:string;
+    solutionsDate:Date;
+    solutionsPhotos:string[];
+    solutionsDescription:string;
+    like:number;
+    dissLike:number;
+}
+interface MatchkedDataInterface{
+    areWeFriends:String[];
+    createdAt:Date;
+    creationDate:Date,
+    grade:String;
+    photos:String[];
+    problemDescription:String;
+    problemDomain:String;
+    solutions:SolutionsInterface[]|null,
+    subject:String;
+    updatedAt:Date;
+    userName:String;
+    userPhoto:String;
+    __v:Number;
+    _id:any;
+}
+
+
+// const SolutionsInitialState:SolutionsInterface={
+//     postId:'',
+//     userName:'',
+//     grade:'',
+//     solutionsDate:new Date(),
+//     solutionsPhotos:['deneme.png','deneme2.png'],
+//     solutionsDescription:'',
+//     like:0,
+//     dissLike:0
+// }
+const MatchkedDataInitialState:MatchkedDataInterface={
+    areWeFriends:[],
+    createdAt:new Date(),
+    creationDate:new Date(),
+    grade:"",
+    photos:[],
+    problemDescription:"",
+    problemDomain:"",
+    solutions:{
+        postId:'',
+        userName:'',
+        grade:'',
+        solutionsDate:new Date(),
+        solutionsPhotos:[],
+        solutionsDescription:'',
+        like:0,
+        dissLike:0
+    },
+    subject:"",
+    updatedAt:new Date(),
+    userName:"",
+    userPhoto:"",
+    __v:0,
+    _id:"",
 }
 
 
 const CorrectionsPage:React.FC<ParamsProps>=({params})=>{
+    const paramsValues:string|null=params['solve&_']?params['solve&_'].substring(9):null;
     const [openSolutionPlace,setOpenSolutionPlace]=useState<boolean>(false);
-    const [solvePagePostData,setSolvePagePostData]=useState<SharePostDataInterface[]|undefined>(undefined);
+
+    const [solvePagePostData,setSolvePagePostData]=useState<SharePostDataInterface[]>([]);
     const [solvePageDataLoading,setSolvePageDataLoading]=useState<boolean>(false);
+    const [solvePageForEachFailure,setSolvePageForEachFailure]=useState<boolean>(false);
 
-    const date=new Date().toLocaleString();
-    console.log(params.corrections);
-    console.log(params.corrections);
+    const [domainParamsValues,setDomainParamsValues]=useState<boolean>(false);
+    const [domainValueHave,setDomainValueHave]=useState<boolean>(false); 
+    const [matchedData,setMatchedData]=useState<SharePostDataInterface|undefined>(undefined);
 
-    const router=useParams();
-    console.log(router);
+
+
+    const [formValue,setFormValue]=useState<SolutionsInterface>(SolutionsInitialState);
+    const [selectedOption, setSelectedOption] = useState<string|undefined>('');
+
+    const {postId,userName,grade,solutionsDate,solutionsPhotos,solutionsDescription,like,dissLike}=formValue;
+    const handleTextAreaChange=(e:React.ChangeEvent<HTMLTextAreaElement>)=>{
+        const newTextArea=e.target.value;
+        setSelectedOption(newTextArea);
+        setFormValue((prevForm)=>({
+            ...prevForm,
+            solutionsDescription:newTextArea
+        }))
+    }
+
+    
+    useEffect(()=>{
+        const setSessionData=async()=>{
+            try {
+                const session=await getSession();
+                if(session?.user){
+                    setFormValue((prevData)=>({
+                          ...prevData,
+                          userName:session.user.username,
+                          grade:session.user.classing,
+                      }))  
+                }else{
+                    console.log('Session Gelemedi');
+                }
+            } catch (error) {
+                console.log('Error : ', error);     
+            }
+        }
+        setSessionData();
+    },[])
+    console.log(formValue);
+
 
 
     useEffect(()=>{
         //discover data fetch
+        console.log(paramsValues);
         const discoverFetchData=async()=>{
             setSolvePageDataLoading(true);
             try {
@@ -40,15 +148,89 @@ const CorrectionsPage:React.FC<ParamsProps>=({params})=>{
                 setSolvePageDataLoading(false);
             } catch (error) {
                 console.log('Veri Getirilirken Hata Oluştu : ',error);
+                setSolvePageForEachFailure(true);
             }
         }
+        
         discoverFetchData();
-    },[])
-    
-    
-    console.log(solvePagePostData)
 
-    return (
+    },[])
+    useEffect(()=>{
+        const forEachParamsData=()=>{
+            if(solvePagePostData!=undefined){
+                    let found:boolean=false;
+                    for(const e of solvePagePostData){
+                        setMatchedData(e);
+                        setFormValue((prevData)=>({
+                            ...prevData,
+                            postId:e._id
+                        }))
+                        if(e.problemDomain===paramsValues){
+                            console.log(e.problemDomain);
+                            found=true;
+                            break;
+                        }
+                    }
+                    setDomainParamsValues(found);
+                }else{
+                    setSolvePageForEachFailure(true);
+                }
+            setDomainValueHave(true);
+        }
+        forEachParamsData();
+    },[paramsValues, solvePagePostData])
+    
+
+    const testVerisidir=()=>{
+                let found:boolean=false;
+                for(const e of solvePagePostData){
+                    setMatchedData(e);
+                    setFormValue((prevData)=>({
+                        ...prevData,
+                        postId:e._id
+                    }))
+                    if(e.problemDomain===paramsValues){
+                        console.log(e.problemDomain);
+                        found=true;
+                        break;
+                    }
+                }
+                setDomainParamsValues(found);
+                setDomainValueHave(true);
+            }
+
+    const handleFormData=async(e:React.ChangeEvent<HTMLFormElement>)=>{
+        e.preventDefault();
+        try {
+            console.log(formValue);
+            const response=await fetch('/api/datacom/postup',{
+                method:"PUT",
+                headers:{
+                    'Content-Type':'application/json',
+                },
+                body:JSON.stringify(formValue)
+            })
+            if(response.ok){
+                console.log("Veri Başarılı bir şekilde güncellendi ! ");
+                setOpenSolutionPlace(false);
+                testVerisidir();
+            }else{
+                console.error('Veri Güncellenme sırasında sorun oluştu !!!');
+            }
+        } catch (error) {
+            console.log('Error : ', error);     
+        }
+    }
+
+    console.log(matchedData);
+    if(domainValueHave===false)return <LoadingComponent/>;
+    return ( 
+ 
+        !domainParamsValues?(
+        <section className="mx-auto w-full h-screen flex flex-col justify-center items-center text-4xl" style={{width:"1000px"}}>
+            Aradığınız Problem Bulunamadı :(
+        </section>
+        ):(
         <section className="mx-auto w-full h-full flex flex-col justify-center items-center" style={{width:"1000px"}}>
 
 
@@ -61,67 +243,79 @@ const CorrectionsPage:React.FC<ParamsProps>=({params})=>{
                 <div className="border-4 flex flex-col justify-center w-full p-5 rounded-xl">
                     <div className="flex flex-row justify-between">
                         <div className="flex-1 flex justify-start items-center">
-                            <div>
+                            <Link href={`/dashboard/profile/${matchedData?.userName}`}>
                                 <Image src={UserPhoto} className="rounded-full" width={100} alt="user-corrections-photo"/>
-                            </div>
+                            </Link>
                             <div className="flex flex-col justify-start w-full ml-2">
-                                <span>TestUSER</span>
-                                <span>diğer içerikler</span>
+                                <Link href={`/dashboard/profile/${matchedData?.userName}`} className="text-xl font-bold">{matchedData?.userName}</Link>
+                                <span>{matchedData?.grade}</span>
+                                <span>{matchedData?.subject}</span>
                             </div>
                         </div>
                         <div className="flex justify-end items-center">
                             <button className="p-3 bg-blue-500 rounded-2xl text-white font-medium my-2 hover:bg-blue-700 transition duration-300 ease-in-out">Add Friend</button>
                         </div>
                     </div>
-                    <span className="mt-2">{date}</span>
-                    <span className="mt-2">Soru İçeriği açıklaması</span>
+                    <span className="mt-2">{matchedData?.createdAt?.toLocaleString()}</span>
+                    <span className="mt-2">{matchedData?.problemDescription}</span>
                 </div>
 
 
             </div>
             
             {openSolutionPlace?(
-                <div className='flex flex-col border-4 rounded-xl w-full p-5 m-5'>
-                    <div className='flex flex-row w-full'>
-                        <span className='flex flex-1 justify-center items-center text-4xl cursor-pointer border-4 mr-2'><MdOutlineAddPhotoAlternate/></span>
-                        <div className='flex-1 flex'>
-                            <Textarea size="lg" label="Solution" rows={12} cols={40}/>
+                    <form onSubmit={handleFormData} className='flex flex-col border-4 rounded-xl w-full p-5 m-5'>
+                        <div className='flex flex-row w-full'>
+                            <span className='flex flex-1 justify-center items-center text-4xl cursor-pointer border-4 mr-2'><MdOutlineAddPhotoAlternate/></span>
+                            <div className='flex-1 flex'>
+                                <Textarea label="Solution" size="lg" name="solutionsDescription" rows={12} cols={40} onChange={handleTextAreaChange} value={solutionsDescription}/>
+                            </div>
                         </div>
-                    </div>
-                    <button className="py-3 px-16 bg-blue-500 rounded-2xl text-white font-medium my-5 hover:bg-blue-700 transition duration-300 ease-in-out" onClick={()=>setOpenSolutionPlace(false)}>Gönder</button>
-                </div>
+                        <button type="submit" className="py-3 px-16 bg-blue-500 rounded-2xl text-white font-medium my-5 hover:bg-blue-700 transition duration-300 ease-in-out" >Gönder</button>
+                    </form>
             ):(
-                <button className="py-3 px-16 bg-blue-500 rounded-2xl text-white font-medium my-5 hover:bg-blue-700 transition duration-300 ease-in-out" onClick={()=>setOpenSolutionPlace(true)}>Solution</button>
+                <button type="button" className="py-3 px-16 bg-blue-500 rounded-2xl text-white font-medium my-5 hover:bg-blue-700 transition duration-300 ease-in-out" onClick={()=>setOpenSolutionPlace(true)}>Solution</button>
             )}
                 
-                
-            <div className="w-full flex flex-row ">
-                <div className="border-4 flex flex-col justify-center w-full p-5 rounded-xl">
-                    <div className="flex flex-row justify-between">
-                        <div className="flex-1 flex justify-start items-center">
-                            <div>
-                                <Image src={UserPhoto} className="rounded-full" width={100} alt="user-corrections-photo"/>
+            {matchedData?.solutions && matchedData?.solutions.length>0?(
+            <>
+                {/* {matchedData?.solutions.map((solutionData,index:number)=>(
+                    <div className="w-full flex flex-row mb-4" key={index}>
+                        <div className="border-4 flex flex-col justify-center w-full p-5 rounded-xl">
+                            <div className="flex flex-row justify-between">
+                                <div className="flex-1 flex justify-start items-center">
+                                    <div>
+                                        <Image src={UserPhoto} className="rounded-full" width={100} alt="user-corrections-photo"/>
+                                    </div>
+                                    <div className="flex flex-col justify-start w-full ml-2">
+                                        <Link href={`/dashboard/profile/${matchedData?.solutions[0].userName}`} className="text-xl font-bold">{matchedData?.solutions.userName}</Link>
+                                        <span>{matchedData?.solutions.grade}</span>
+                                        <span>{matchedData?.solutions.subject}</span>
+                                    </div>
+                                </div>
+                                <div className="flex justify-end items-center">
+                                    <button className="p-3 bg-blue-500 rounded-2xl text-white font-medium my-2 hover:bg-blue-700 transition duration-300 ease-in-out">Add Friend</button>
+                                </div>
                             </div>
-                            <div className="flex flex-col justify-start w-full ml-2">
-                                <span>TestUSER</span>
-                                <span>diğer içerikler</span>
-                            </div>
+                            <span className="mt-2">{matchedData?.solutions.solutionsDate.toLocaleString()}</span>
+                            <span className="mt-2 bg-blue-100 p-2 rounded-xl">{matchedData.solutions.solutionsDescription}</span>
                         </div>
-                        <div className="flex justify-end items-center">
-                            <button className="p-3 bg-blue-500 rounded-2xl text-white font-medium my-2 hover:bg-blue-700 transition duration-300 ease-in-out">Add Friend</button>
+                        <div className='ml-2 justify-center items-center'>
+                            <button className="p-3 bg-blue-500 rounded-2xl text-white font-medium my-5 hover:bg-blue-700 transition duration-300 ease-in-out"><BiLike/></button>
+                            <button className="p-3 bg-blue-500 rounded-2xl text-white font-medium my-5 hover:bg-blue-700 transition duration-300 ease-in-out"><BiDislike/></button>
                         </div>
                     </div>
-                    <span className="mt-2">{date}</span>
-                    <span className="mt-2 bg-blue-100 p-2 rounded-xl">Soru Cevabı Açıklaması</span>
+                ))} */}
+            </>
+
+            ):(
+                <div className="w-full h-full pt-10 justify-center items-center text-center text-4xl">
+                    Solution is not found
                 </div>
-                <div className='ml-2 justify-center items-center'>
-                    <button className="p-3 bg-blue-500 rounded-2xl text-white font-medium my-5 hover:bg-blue-700 transition duration-300 ease-in-out"><BiLike/></button>
-                    <button className="p-3 bg-blue-500 rounded-2xl text-white font-medium my-5 hover:bg-blue-700 transition duration-300 ease-in-out"><BiDislike/></button>
-                </div>
-            </div>
+            )} 
 
         </section>
-    )
+        ))
 }
 
 export default CorrectionsPage
