@@ -1,5 +1,6 @@
 "use client"
 import { useSession } from "next-auth/react"
+import { useEffect } from "react";
 
 export interface SessionDataInterface {
     classing?:string|null;
@@ -9,10 +10,17 @@ export interface SessionDataInterface {
     role?:string|null;
     username?:string|null;
 }
+interface ParamsProps{
+    params:string;
+}
 
-const ProfilePage:React.FC=()=>{
+const ProfilePage:React.FC<ParamsProps>=({params})=>{
     const {data:session,status}=useSession();
     const datas: SessionDataInterface[] | null = session?.user ? [session.user] : null;
+
+    useEffect(()=>{
+        console.log(params);
+    },[params])
     return(
         <div className="w-full h-screen justify-center items-center text-center text-3xl">
             {datas ? (

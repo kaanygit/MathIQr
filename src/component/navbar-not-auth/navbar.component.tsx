@@ -1,5 +1,5 @@
 "use client"
-import { SessionDataInterface } from '@/app/(private_route)/dashboard/profile/page';
+import { SessionDataInterface } from '@/app/(private_route)/dashboard/[...profile]/page';
 import { Spinner } from '@material-tailwind/react';
 import { signOut, useSession } from 'next-auth/react';
 import Link from 'next/link'

@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 import StudyingStudent from '../../../assets/studyingstudent.png'
 import Image from 'next/image';
 import { useSession } from 'next-auth/react';
-import { SessionDataInterface } from './profile/page';
+import { SessionDataInterface } from './[...profile]/page';
 import Teacher from '../../../assets/teachers.png'
 import AiTeacher from '../../../assets/aiteacher.png'
 import QuizSolution from '../../../assets/quizsolution.png'

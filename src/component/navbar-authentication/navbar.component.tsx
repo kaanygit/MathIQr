@@ -8,11 +8,10 @@ import {FiSettings} from 'react-icons/fi'
 import { Avatar, Menu, MenuHandler, MenuItem, MenuList } from "@material-tailwind/react"
 import {RxAvatar} from 'react-icons/rx'
 import { signOut } from "next-auth/react"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 
 const NavbarAuthentication:React.FC=()=>{
-    const currentMode:string|null=localStorage.getItem("darkmode");
-    const [currentDarkMode,setCurrentDarkMode]=useState<string|null>(currentMode);
+    const [currentDarkMode,setCurrentDarkMode]=useState<string|null>("");
     const darkMode=()=>localStorage.setItem("darkmode","false");
     const sunMode=()=>localStorage.setItem("darkmode","true");
     const handleDarkMode=()=>{
@@ -30,6 +29,15 @@ const NavbarAuthentication:React.FC=()=>{
             }
         }
     }
+    useEffect(()=>{
+        const currentMode:string|null=localStorage.getItem("darkmode");
+        if(typeof window !== "undefined"){
+            const currentMode=localStorage.getItem("darkmode");
+            setCurrentDarkMode("true")
+        }else{
+            setCurrentDarkMode("false")
+        }
+    },[])
     return(
         <div className="w-full h-full mx-auto px-16 py-8 justify-center items-center text-center flex shadow ">
             <div className="flex w-full justify-center items-center text-2xl z-40">

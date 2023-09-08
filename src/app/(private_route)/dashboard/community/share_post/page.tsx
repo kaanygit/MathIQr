@@ -122,7 +122,7 @@ const SharePostCommunity:React.FC=()=>{
               console.log('Veri başarıyla kaydedildi');
             //   handleDomainGenerator();
               setSessionShareData();
-              redirect('/dashboard/community/discover');
+              router.push('/dashboard/community/discover');
             } else {
               console.error('Veri kaydı sırasında bir hata oluştu');
             }

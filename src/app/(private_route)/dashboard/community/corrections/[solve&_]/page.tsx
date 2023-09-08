@@ -223,10 +223,10 @@ const CorrectionsPage:React.FC<ParamsProps>=({params})=>{
             Aradığınız Problem Bulunamadı :(
         </section>
         ):(
-        <section className="mx-auto w-full h-full flex flex-col justify-center items-center" style={{width:"1000px"}}>
+        <section className="mx-auto w-full h-full flex flex-col justify-center items-center  pb-10 " style={{width:"1000px"}}>
 
 
-            <div className="w-full h-full flex flex-col justify-center items-center mt-3">
+            <div className="w-full h-full flex flex-col justify-center items-center mt-3" >
                 <div className="flex-1 flex justify-center items-center px-5  w-full" >
                     <Image src={QuesitonPhoto} width={200}  alt="quesiton-photos"/>
                     <Image src={QuesitonPhoto} width={200}  alt="quesiton-photos"/>
@@ -272,8 +272,8 @@ const CorrectionsPage:React.FC<ParamsProps>=({params})=>{
             {matchedData?.solutions && matchedData?.solutions.length>0?(
             <>
                 {matchedData?.solutions.map((solutionData,index:number)=>(
-                    <div className="w-full flex flex-row mb-4" key={index}>
-                        <div className="border-4 flex flex-col justify-center w-full p-5 rounded-xl">
+                    <div className="w-full flex flex-row mb-4 h-full justify-center " key={index} >
+                        <div className="border-4 flex flex-1 flex-col justify-center w-full h-full p-5 rounded-xl max-h-1000 overflow-y-auto ">
                             <div className="flex flex-row justify-between">
                                 <div className="flex-1 flex justify-start items-center">
                                     <div>
@@ -285,15 +285,15 @@ const CorrectionsPage:React.FC<ParamsProps>=({params})=>{
                                     </div>
                                 </div>
                                 <div className="flex justify-end items-center">
+                                    <div className='flex flex-row mr-2 justify-center items-center'>
+                                        <button className="flex justify-center items-center text-center p-3 mr-2 bg-blue-500 rounded-2xl text-white font-medium my-5 hover:bg-blue-700 transition duration-300 ease-in-out"><span className="justify-center flex items-center text-center mr-2">{matchedData?.solutions[index].like}</span><BiLike className="text-xl font-bold"/></button>
+                                        <button className="flex justify-center items-center text-center p-3 bg-blue-500 rounded-2xl text-white font-medium my-5 hover:bg-blue-700 transition duration-300 ease-in-out"><span className="justify-center flex items-center text-center mr-2">{matchedData?.solutions[index].disslike}</span><BiDislike className="text-xl font-bold"/></button>
+                                    </div>
                                     <button className="p-3 bg-blue-500 rounded-2xl text-white font-medium my-2 hover:bg-blue-700 transition duration-300 ease-in-out">Add Friend</button>
                                 </div>
                             </div>
-                            {/* <span className="mt-2">{matchedData?.solutions.solutionsDate[index].toLocaleString()}</span> */}
-                            <span className="mt-2 bg-blue-100 p-2 rounded-xl">{matchedData.solutions[index].solutionsDescription}</span>
-                        </div>
-                        <div className='ml-2 justify-center items-center'>
-                            <button className="p-3 bg-blue-500 rounded-2xl text-white font-medium my-5 hover:bg-blue-700 transition duration-300 ease-in-out"><BiLike/></button>
-                            <button className="p-3 bg-blue-500 rounded-2xl text-white font-medium my-5 hover:bg-blue-700 transition duration-300 ease-in-out"><BiDislike/></button>
+                            <span className="mt-2">{matchedData?.solutions[index].solutionsDate.toLocaleString()}</span>
+                            <span className="mt-2 bg-blue-100 p-2 rounded-xl break-words w-full h-full">{matchedData.solutions[index].solutionsDescription}</span>
                         </div>
                     </div>
                 ))}
