@@ -286,8 +286,8 @@ const CorrectionsPage:React.FC<ParamsProps>=({params})=>{
                                 </div>
                                 <div className="flex justify-end items-center">
                                     <div className='flex flex-row mr-2 justify-center items-center'>
-                                        <button className="flex justify-center items-center text-center p-3 mr-2 bg-blue-500 rounded-2xl text-white font-medium my-5 hover:bg-blue-700 transition duration-300 ease-in-out"><span className="justify-center flex items-center text-center mr-2">{matchedData?.solutions[index].like}</span><BiLike className="text-xl font-bold"/></button>
-                                        <button className="flex justify-center items-center text-center p-3 bg-blue-500 rounded-2xl text-white font-medium my-5 hover:bg-blue-700 transition duration-300 ease-in-out"><span className="justify-center flex items-center text-center mr-2">{matchedData?.solutions[index].disslike}</span><BiDislike className="text-xl font-bold"/></button>
+                                        <button className="flex justify-center items-center text-center p-3 mr-2 bg-blue-500 rounded-2xl text-white font-medium my-5 hover:bg-blue-700 transition duration-300 ease-in-out"><span className="justify-center flex items-center text-center mr-2">{String(matchedData?.solutions[index].like)}</span><BiLike className="text-xl font-bold"/></button>
+                                        <button className="flex justify-center items-center text-center p-3 bg-blue-500 rounded-2xl text-white font-medium my-5 hover:bg-blue-700 transition duration-300 ease-in-out"><span className="justify-center flex items-center text-center mr-2">{String(matchedData?.solutions[index].like)}</span><BiDislike className="text-xl font-bold"/></button>
                                     </div>
                                     <button className="p-3 bg-blue-500 rounded-2xl text-white font-medium my-2 hover:bg-blue-700 transition duration-300 ease-in-out">Add Friend</button>
                                 </div>
