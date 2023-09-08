@@ -226,7 +226,7 @@ const CorrectionsPage:React.FC<ParamsProps>=({params})=>{
         <section className="mx-auto w-full h-full flex flex-col justify-center items-center  pb-10 " style={{width:"1000px"}}>
 
 
-            <div className="w-full h-full flex flex-col justify-center items-center mt-3" >
+            <div className="w-full h-full flex flex-col justify-center items-center mt-3 break-all" >
                 <div className="flex-1 flex justify-center items-center px-5  w-full" >
                     <Image src={QuesitonPhoto} width={200}  alt="quesiton-photos"/>
                     <Image src={QuesitonPhoto} width={200}  alt="quesiton-photos"/>
