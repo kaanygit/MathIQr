@@ -13,7 +13,7 @@ Uygulamamızın topluluk bölümünde aşağıdaki işlemleri yapabilirsiniz:
 
 ### 2. Ders Öğrenme
 
-- 1. sınıftan 12. sınıfa kadar tüm dersler için öğrenme içeriği.
+- 1 . sınıftan 12. sınıfa kadar tüm dersler için öğrenme içeriği.
 - İnteraktif ders materyalleri ve yapay zeka destekli öğrenme .
 - Her seviyeye uygun özelleştirilmiş öğrenme planları.
 
