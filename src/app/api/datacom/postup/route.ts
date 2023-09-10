@@ -12,7 +12,7 @@ export async function PUT(request:any){
         'solutionsPhotos':solutionsPhotos,
         'solutionsDescription':solutionsDescription,
         'like':like,
-        'disslike':dissLike
+        'dissLike':dissLike
     };
     const existingDocument = await CommunityDataSchema.findByIdAndUpdate(postId,{$push:{solutions:addedSolution}},{new:true});
     return NextResponse.json({message:"Community Post Updated"},{status:200});
