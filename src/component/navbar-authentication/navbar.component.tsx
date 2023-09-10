@@ -50,7 +50,7 @@ const NavbarAuthentication:React.FC=()=>{
                     </div>
                     <div className="flex justify-center items-center text-center pl-4 text-2xl">
                         <span className=" font-black"><PiExam/></span>
-                        <Link href="/dashboard/quiz" className="pl-3">Exam</Link>
+                        <Link href="/dashboard/exam" className="pl-3">Exam</Link>
                     </div>
                     <div className="flex justify-center items-center text-center pl-4 text-2xl">
                         <span className=" font-black"><TbMessages/></span>
