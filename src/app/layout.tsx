@@ -1,13 +1,13 @@
-
 import { AuthProvider, FooterComponent, LoadingComponent, NavbarAuthentication, NavbarNotAuth } from '@/component/component.export'
 import './globals.css'
 import type { Metadata } from 'next'
 import { Roboto_Mono } from 'next/font/google'
 import { Suspense} from 'react'
-import {store} from '../redux/store'
 
 import { authOptions } from './api/auth/[...nextauth]/route'
 import { getServerSession } from 'next-auth'
+import { useAppSelector } from '@/redux/store'
+import { ProviderStore } from '@/redux/provider'
 
 
 const robotoMono = Roboto_Mono({ 
@@ -24,26 +24,26 @@ export default async function RootLayout({
 }) {
   const session=await getServerSession(authOptions);
   return (
-    // <Provider store={store}>
-      <AuthProvider>
+    <AuthProvider>
+        <ProviderStore>
           <html lang="en">
             <body className={robotoMono.className}>
               {session?(
-                <>
-                  <NavbarAuthentication/>
-                  <Suspense fallback={<LoadingComponent/>}>{children}</Suspense>
-                  <FooterComponent/>
-                </>
-              ):(
-                <>
-                  <NavbarNotAuth/>
-                  <Suspense fallback={<LoadingComponent/>}>{children}</Suspense>
-                  <FooterComponent/>
-                </>
+                        <>
+                          <NavbarAuthentication/>
+                          <Suspense fallback={<LoadingComponent/>}>{children}</Suspense>
+                          <FooterComponent/>
+                        </>
+                    ):(
+                        <>
+                          <NavbarNotAuth/>
+                          <Suspense fallback={<LoadingComponent/>}>{children}</Suspense>
+                          <FooterComponent/>
+                        </>
               )}
             </body>
           </html>
+          </ProviderStore>
         </AuthProvider>
-      // </Provider>
   )
 }

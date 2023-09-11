@@ -9,14 +9,16 @@
             "exam_content": "Cebirin temel konuları işlenecek",
             "exam_completed": false,
             "exam_image": "image1.jpg",
-            "exam_domain_params": "1001"
+            "exam_domain_params": "1001",
+            "exam_duration":30
           },
           {
             "exam_name": "Denklem Çözme",
             "exam_content": "Denklemlerin çözüm yöntemleri öğrenilecek",
             "exam_completed": false,
             "exam_image": "image2.jpg",
-            "exam_domain_params": "1002"
+            "exam_domain_params": "1002",
+            "exam_duration":30
           }
         ]
       },
@@ -29,7 +31,8 @@
             "exam_content": "Geometri konuları işlenecek",
             "exam_completed": false,
             "exam_image": "image3.jpg",
-            "exam_domain_params": "1003"
+            "exam_domain_params": "1003",
+            "exam_duration":30
           }
         ]
       },
@@ -42,7 +45,8 @@
             "exam_content": "Sayılarla ilgili temel konular öğrenilecek",
             "exam_completed": false,
             "exam_image": "image4.jpg",
-            "exam_domain_params": "1004"
+            "exam_domain_params": "1004",
+            "exam_duration":30
           }
         ]
       },
@@ -55,7 +59,8 @@
             "exam_content": "İstatistik temel konuları işlenecek",
             "exam_completed": false,
             "exam_image": "image5.jpg",
-            "exam_domain_params": "1005"
+            "exam_domain_params": "1005",
+            "exam_duration":30
           }
         ]
       },
@@ -68,7 +73,8 @@
             "exam_content": "Trigonometriye giriş yapılacak",
             "exam_completed": false,
             "exam_image": "image6.jpg",
-            "exam_domain_params": "1006"
+            "exam_domain_params": "1006",
+            "exam_duration":30
           }
         ]
       }
@@ -83,14 +89,16 @@
               "exam_content": "Toplama işlemi öğrenilecek",
               "exam_completed": false,
               "exam_image": "image1.jpg",
-              "exam_domain_params": "2001"
+              "exam_domain_params": "2001",
+              "exam_duration":36
             },
             {
               "exam_name": "Çıkarma İşlemi",
               "exam_content": "Çıkarma işlemi öğrenilecek",
               "exam_completed": false,
               "exam_image": "image2.jpg",
-              "exam_domain_params": "2002"
+              "exam_domain_params": "2002",
+              "exam_duration":30
             }
           ]
         },
@@ -103,14 +111,16 @@
               "exam_content": "Çarpma işlemi öğrenilecek",
               "exam_completed": false,
               "exam_image": "image3.jpg",
-              "exam_domain_params": "2003"
+              "exam_domain_params": "2003",
+              "exam_duration":35
             },
             {
               "exam_name": "Bölme İşlemi",
               "exam_content": "Bölme işlemi öğrenilecek",
               "exam_completed": false,
               "exam_image": "image4.jpg",
-              "exam_domain_params": "2004"
+              "exam_domain_params": "2004",
+              "exam_duration":30
             }
           ]
         },
@@ -123,7 +133,8 @@
               "exam_content": "Geometri konuları işlenecek",
               "exam_completed": false,
               "exam_image": "image5.jpg",
-              "exam_domain_params": "2005"
+              "exam_domain_params": "2005",
+              "exam_duration":30
             }
           ]
         },
@@ -136,7 +147,8 @@
               "exam_content": "Sayılarla ilgili temel konular öğrenilecek",
               "exam_completed": false,
               "exam_image": "image6.jpg",
-              "exam_domain_params": "2006"
+              "exam_domain_params": "2006",
+              "exam_duration":30
             }
           ]
         },
@@ -149,7 +161,8 @@
               "exam_content": "Uzunluk ölçü birimleri öğrenilecek",
               "exam_completed": false,
               "exam_image": "image7.jpg",
-              "exam_domain_params": "2007"
+              "exam_domain_params": "2007",
+              "exam_duration":30
             }
           ]
         },
@@ -162,7 +175,8 @@
               "exam_content": "Zaman ölçü birimleri öğrenilecek",
               "exam_completed": false,
               "exam_image": "image8.jpg",
-              "exam_domain_params": "2008"
+              "exam_domain_params": "2008",
+              "exam_duration":30
             }
           ]
         }
@@ -177,14 +191,16 @@
               "exam_content": "Toplama işlemi öğrenilecek",
               "exam_completed": false,
               "exam_image": "image1.jpg",
-              "exam_domain_params": "3001"
+              "exam_domain_params": "3001",
+              "exam_duration":45
             },
             {
               "exam_name": "Çıkarma İşlemi",
               "exam_content": "Çıkarma işlemi öğrenilecek",
               "exam_completed": false,
               "exam_image": "image2.jpg",
-              "exam_domain_params": "3002"
+              "exam_domain_params": "3002",
+              "exam_duration":45
             }
           ]
         },
@@ -197,14 +213,16 @@
               "exam_content": "Çarpma işlemi öğrenilecek",
               "exam_completed": false,
               "exam_image": "image3.jpg",
-              "exam_domain_params": "3003"
+              "exam_domain_params": "3003",
+              "exam_duration":45
             },
             {
               "exam_name": "Bölme İşlemi",
               "exam_content": "Bölme işlemi öğrenilecek",
               "exam_completed": false,
               "exam_image": "image4.jpg",
-              "exam_domain_params": "3004"
+              "exam_domain_params": "3004",
+              "exam_duration":45
             }
           ]
         },
@@ -217,7 +235,8 @@
               "exam_content": "Geometri konuları işlenecek",
               "exam_completed": false,
               "exam_image": "image5.jpg",
-              "exam_domain_params": "3005"
+              "exam_domain_params": "3005",
+              "exam_duration":45
             }
           ]
         },
@@ -230,7 +249,8 @@
               "exam_content": "Sayılarla ilgili temel konular öğrenilecek",
               "exam_completed": false,
               "exam_image": "image6.jpg",
-              "exam_domain_params": "3006"
+              "exam_domain_params": "3006",
+              "exam_duration":45
             }
           ]
         },
@@ -243,7 +263,8 @@
               "exam_content": "Uzunluk ölçü birimleri öğrenilecek",
               "exam_completed": false,
               "exam_image": "image7.jpg",
-              "exam_domain_params": "3007"
+              "exam_domain_params": "3007",
+              "exam_duration":45
             }
           ]
         },
@@ -256,7 +277,8 @@
               "exam_content": "Zaman ölçü birimleri öğrenilecek",
               "exam_completed": false,
               "exam_image": "image8.jpg",
-              "exam_domain_params": "3008"
+              "exam_domain_params": "3008",
+              "exam_duration":45
             }
           ]
         }
@@ -271,14 +293,16 @@
               "exam_content": "Toplama ve çıkarma işlemleri öğrenilecek",
               "exam_completed": false,
               "exam_image": "image1.jpg",
-              "exam_domain_params": "4001"
+              "exam_domain_params": "4001",
+              "exam_duration":45
             },
             {
               "exam_name": "Çarpma ve Bölme",
               "exam_content": "Çarpma ve bölme işlemleri öğrenilecek",
               "exam_completed": false,
               "exam_image": "image2.jpg",
-              "exam_domain_params": "4002"
+              "exam_domain_params": "4002",
+              "exam_duration":45
             }
           ]
         },
@@ -291,14 +315,16 @@
               "exam_content": "Türkçe yazım kuralları öğrenilecek",
               "exam_completed": false,
               "exam_image": "image3.jpg",
-              "exam_domain_params": "4003"
+              "exam_domain_params": "4003",
+              "exam_duration":45
             },
             {
               "exam_name": "Cümlenin Yapısı",
               "exam_content": "Cümlenin yapısı öğrenilecek",
               "exam_completed": false,
               "exam_image": "image4.jpg",
-              "exam_domain_params": "4004"
+              "exam_domain_params": "4004",
+              "exam_duration":45
             }
           ]
         },
@@ -311,7 +337,8 @@
               "exam_content": "Temel bilim kavramları öğrenilecek",
               "exam_completed": false,
               "exam_image": "image5.jpg",
-              "exam_domain_params": "4005"
+              "exam_domain_params": "4005",
+              "exam_duration":45
             }
           ]
         },
@@ -324,7 +351,8 @@
               "exam_content": "Maddenin halleri öğrenilecek",
               "exam_completed": false,
               "exam_image": "image6.jpg",
-              "exam_domain_params": "4006"
+              "exam_domain_params": "4006",
+              "exam_duration":45
             }
           ]
         },
@@ -337,7 +365,8 @@
               "exam_content": "Ülkemiz ve dünya coğrafyası öğrenilecek",
               "exam_completed": false,
               "exam_image": "image7.jpg",
-              "exam_domain_params": "4007"
+              "exam_domain_params": "4007",
+              "exam_duration":45
             }
           ]
         }
@@ -352,14 +381,16 @@
               "exam_content": "Toplama, çıkarma, çarpma ve bölme öğrenilecek",
               "exam_completed": false,
               "exam_image": "image1.jpg",
-              "exam_domain_params": "5001"
+              "exam_domain_params": "5001",
+              "exam_duration":45
             },
             {
               "exam_name": "Kesirler",
               "exam_content": "Kesirlerin işlemleri öğrenilecek",
               "exam_completed": false,
               "exam_image": "image2.jpg",
-              "exam_domain_params": "5002"
+              "exam_domain_params": "5002",
+              "exam_duration":45
             }
           ]
         },
@@ -372,14 +403,16 @@
               "exam_content": "Türkçe yazım kuralları öğrenilecek",
               "exam_completed": false,
               "exam_image": "image3.jpg",
-              "exam_domain_params": "5003"
+              "exam_domain_params": "5003",
+              "exam_duration":45
             },
             {
               "exam_name": "Dil Bilgisi",
               "exam_content": "Dil bilgisi kuralları öğrenilecek",
               "exam_completed": false,
               "exam_image": "image4.jpg",
-              "exam_domain_params": "5004"
+              "exam_domain_params": "5004",
+              "exam_duration":45
             }
           ]
         },
@@ -392,7 +425,8 @@
               "exam_content": "Doğa bilimleri konuları öğrenilecek",
               "exam_completed": false,
               "exam_image": "image5.jpg",
-              "exam_domain_params": "5005"
+              "exam_domain_params": "5005",
+              "exam_duration":45
             }
           ]
         },
@@ -405,7 +439,8 @@
               "exam_content": "Maddenin yapısı ve özellikleri öğrenilecek",
               "exam_completed": false,
               "exam_image": "image6.jpg",
-              "exam_domain_params": "5006"
+              "exam_domain_params": "5006",
+              "exam_duration":45
             }
           ]
         },
@@ -418,7 +453,8 @@
               "exam_content": "Ülkemiz tarihi ve coğrafyası öğrenilecek",
               "exam_completed": false,
               "exam_image": "image7.jpg",
-              "exam_domain_params": "5007"
+              "exam_domain_params": "5007",
+              "exam_duration":45
             }
           ]
         },
@@ -431,7 +467,8 @@
               "exam_content": "Temel İngilizce dil bilgisi öğrenilecek",
               "exam_completed": false,
               "exam_image": "image8.jpg",
-              "exam_domain_params": "5008"
+              "exam_domain_params": "5008",
+              "exam_duration":45
             }
           ]
         }
@@ -446,14 +483,16 @@
               "exam_content": "Kesirlerin işlemleri öğrenilecek",
               "exam_completed": false,
               "exam_image": "image1.jpg",
-              "exam_domain_params": "6001"
+              "exam_domain_params": "6001",
+              "exam_duration":45
             },
             {
               "exam_name": "Eşitsizlikler",
               "exam_content": "Eşitsizliklerin çözüm yöntemleri öğrenilecek",
               "exam_completed": false,
               "exam_image": "image2.jpg",
-              "exam_domain_params": "6002"
+              "exam_domain_params": "6002",
+              "exam_duration":45
             }
           ]
         },
@@ -466,14 +505,16 @@
               "exam_content": "Türkçe yazım kuralları öğrenilecek",
               "exam_completed": false,
               "exam_image": "image3.jpg",
-              "exam_domain_params": "6003"
+              "exam_domain_params": "6003",
+              "exam_duration":45
             },
             {
               "exam_name": "Dil Bilgisi",
               "exam_content": "Dil bilgisi kuralları öğrenilecek",
               "exam_completed": false,
               "exam_image": "image4.jpg",
-              "exam_domain_params": "6004"
+              "exam_domain_params": "6004",
+              "exam_duration":45
             }
           ]
         },
@@ -486,7 +527,8 @@
               "exam_content": "Doğa bilimleri konuları öğrenilecek",
               "exam_completed": false,
               "exam_image": "image5.jpg",
-              "exam_domain_params": "6005"
+              "exam_domain_params": "6005",
+              "exam_duration":45
             }
           ]
         },
@@ -499,7 +541,8 @@
               "exam_content": "Maddenin yapısı ve özellikleri öğrenilecek",
               "exam_completed": false,
               "exam_image": "image6.jpg",
-              "exam_domain_params": "6006"
+              "exam_domain_params": "6006",
+              "exam_duration":45
             }
           ]
         },
@@ -512,7 +555,8 @@
               "exam_content": "Ülkemizin tarihi ve önemli olaylar öğrenilecek",
               "exam_completed": false,
               "exam_image": "image7.jpg",
-              "exam_domain_params": "6007"
+              "exam_domain_params": "6007",
+              "exam_duration":45
             }
           ]
         },
@@ -525,7 +569,8 @@
               "exam_content": "Temel İngilizce dil bilgisi öğrenilecek",
               "exam_completed": false,
               "exam_image": "image8.jpg",
-              "exam_domain_params": "6008"
+              "exam_domain_params": "6008",
+              "exam_duration":45
             }
           ]
         },
@@ -538,7 +583,8 @@
               "exam_content": "Müzik tarihi ve önemli besteciler öğrenilecek",
               "exam_completed": false,
               "exam_image": "image9.jpg",
-              "exam_domain_params": "6009"
+              "exam_domain_params": "6009",
+              "exam_duration":45
             }
           ]
         }
@@ -553,14 +599,16 @@
               "exam_content": "Oranlar ve orantılar konuları öğrenilecek",
               "exam_completed": false,
               "exam_image": "image1.jpg",
-              "exam_domain_params": "7001"
+              "exam_domain_params": "7001",
+              "exam_duration":45
             },
             {
               "exam_name": "Cebir",
               "exam_content": "Cebirsel ifadeler öğrenilecek",
               "exam_completed": false,
               "exam_image": "image2.jpg",
-              "exam_domain_params": "7002"
+              "exam_domain_params": "7002",
+              "exam_duration":45
             }
           ]
         },
@@ -573,14 +621,16 @@
               "exam_content": "Türkçe dil bilgisi öğrenilecek",
               "exam_completed": false,
               "exam_image": "image3.jpg",
-              "exam_domain_params": "7003"
+              "exam_domain_params": "7003",
+              "exam_duration":45
             },
             {
               "exam_name": "Yazım Kuralları",
               "exam_content": "Yazım kuralları öğrenilecek",
               "exam_completed": false,
               "exam_image": "image4.jpg",
-              "exam_domain_params": "7004"
+              "exam_domain_params": "7004",
+              "exam_duration":45
             }
           ]
         },
@@ -593,7 +643,8 @@
               "exam_content": "Hücresel yapı ve organizmalar öğrenilecek",
               "exam_completed": false,
               "exam_image": "image5.jpg",
-              "exam_domain_params": "7005"
+              "exam_domain_params": "7005",
+              "exam_duration":45
             }
           ]
         },
@@ -606,7 +657,8 @@
               "exam_content": "Tarih konuları öğrenilecek",
               "exam_completed": false,
               "exam_image": "image6.jpg",
-              "exam_domain_params": "7006"
+              "exam_domain_params": "7006",
+              "exam_duration":45
             }
           ]
         },
@@ -619,7 +671,8 @@
               "exam_content": "Temel İngilizce dil bilgisi öğrenilecek",
               "exam_completed": false,
               "exam_image": "image7.jpg",
-              "exam_domain_params": "7007"
+              "exam_domain_params": "7007",
+              "exam_duration":45
             }
           ]
         }
@@ -634,14 +687,16 @@
               "exam_content": "Üslü sayılar ve köklü sayılar öğrenilecek",
               "exam_completed": false,
               "exam_image": "image1.jpg",
-              "exam_domain_params": "8001"
+              "exam_domain_params": "8001",
+              "exam_duration":45
             },
             {
               "exam_name": "Denklem Çözme",
               "exam_content": "Denklemlerin çözüm yöntemleri öğrenilecek",
               "exam_completed": false,
               "exam_image": "image2.jpg",
-              "exam_domain_params": "8002"
+              "exam_domain_params": "8002",
+              "exam_duration":45
             }
           ]
         },
@@ -654,14 +709,16 @@
               "exam_content": "Anlatım biçimleri öğrenilecek",
               "exam_completed": false,
               "exam_image": "image3.jpg",
-              "exam_domain_params": "8003"
+              "exam_domain_params": "8003",
+              "exam_duration":45
             },
             {
               "exam_name": "Paragraf Yazma",
               "exam_content": "Etkili paragraf yazma becerileri öğrenilecek",
               "exam_completed": false,
               "exam_image": "image4.jpg",
-              "exam_domain_params": "8004"
+              "exam_domain_params": "8004",
+              "exam_duration":45
             }
           ]
         },
@@ -674,7 +731,8 @@
               "exam_content": "Hücresel yapı ve organizmalar öğrenilecek",
               "exam_completed": false,
               "exam_image": "image5.jpg",
-              "exam_domain_params": "8005"
+              "exam_domain_params": "8005",
+              "exam_duration":45
             }
           ]
         },
@@ -687,7 +745,8 @@
               "exam_content": "Coğrafya konuları öğrenilecek",
               "exam_completed": false,
               "exam_image": "image6.jpg",
-              "exam_domain_params": "8006"
+              "exam_domain_params": "8006",
+              "exam_duration":45
             }
           ]
         },
@@ -700,7 +759,8 @@
               "exam_content": "Temel İngilizce dil bilgisi öğrenilecek",
               "exam_completed": false,
               "exam_image": "image7.jpg",
-              "exam_domain_params": "8007"
+              "exam_domain_params": "8007",
+              "exam_duration":45
             }
           ]
         }
@@ -715,14 +775,16 @@
               "exam_content": "Fonksiyon kavramı ve grafikleri öğrenilecek",
               "exam_completed": false,
               "exam_image": "image1.jpg",
-              "exam_domain_params": "9001"
+              "exam_domain_params": "9001",
+              "exam_duration":45
             },
             {
               "exam_name": "Trigonometri",
               "exam_content": "Trigonometrik fonksiyonlar ve trigonometrik denklemler öğrenilecek",
               "exam_completed": false,
               "exam_image": "image2.jpg",
-              "exam_domain_params": "9002"
+              "exam_domain_params": "9002",
+              "exam_duration":45
             }
           ]
         },
@@ -735,14 +797,16 @@
               "exam_content": "Edebiyat terimleri ve önemli yazarlar öğrenilecek",
               "exam_completed": false,
               "exam_image": "image3.jpg",
-              "exam_domain_params": "9003"
+              "exam_domain_params": "9003",
+              "exam_duration":45
             },
             {
               "exam_name": "Dil Bilgisi",
               "exam_content": "Dil bilgisi kuralları ve yazım kuralları öğrenilecek",
               "exam_completed": false,
               "exam_image": "image4.jpg",
-              "exam_domain_params": "9004"
+              "exam_domain_params": "9004",
+              "exam_duration":45
             }
           ]
         },
@@ -755,7 +819,8 @@
               "exam_content": "Kimyasal tepkimeler ve denklemler öğrenilecek",
               "exam_completed": false,
               "exam_image": "image5.jpg",
-              "exam_domain_params": "9005"
+              "exam_domain_params": "9005",
+              "exam_duration":45
             }
           ]
         },
@@ -768,7 +833,8 @@
               "exam_content": "Dinamik konuları ve kuvvet öğrenilecek",
               "exam_completed": false,
               "exam_image": "image6.jpg",
-              "exam_domain_params": "9006"
+              "exam_domain_params": "9006",
+              "exam_duration":45
             }
           ]
         },
@@ -781,7 +847,8 @@
               "exam_content": "Tarih bilimi ve tarihsel dönemler öğrenilecek",
               "exam_completed": false,
               "exam_image": "image7.jpg",
-              "exam_domain_params": "9007"
+              "exam_domain_params": "9007",
+              "exam_duration":45
             }
           ]
         },
@@ -794,7 +861,8 @@
               "exam_content": "İklim tipleri ve doğal afetler öğrenilecek",
               "exam_completed": false,
               "exam_image": "image8.jpg",
-              "exam_domain_params": "9008"
+              "exam_domain_params": "9008",
+              "exam_duration":45
             }
           ]
         },
@@ -807,7 +875,8 @@
               "exam_content": "Advanced English grammar and vocabulary will be covered",
               "exam_completed": false,
               "exam_image": "image9.jpg",
-              "exam_domain_params": "9009"
+              "exam_domain_params": "9009",
+              "exam_duration":45
             }
           ]
         }
@@ -822,14 +891,16 @@
               "exam_content": "Limit kavramı ve süreklilik öğrenilecek",
               "exam_completed": false,
               "exam_image": "image1.jpg",
-              "exam_domain_params": "10001"
+              "exam_domain_params": "10001",
+              "exam_duration":40
             },
             {
               "exam_name": "Türev ve İntegral",
               "exam_content": "Türev ve integral hesabı öğrenilecek",
               "exam_completed": false,
               "exam_image": "image2.jpg",
-              "exam_domain_params": "10002"
+              "exam_domain_params": "10002",
+              "exam_duration":40
             }
           ]
         },
@@ -842,14 +913,16 @@
               "exam_content": "Edebiyat tarihi ve önemli yazarlar öğrenilecek",
               "exam_completed": false,
               "exam_image": "image3.jpg",
-              "exam_domain_params": "10003"
+              "exam_domain_params": "10003",
+              "exam_duration":40
             },
             {
               "exam_name": "Anlatım Sanatları",
               "exam_content": "Anlatım sanatları ve metin türleri öğrenilecek",
               "exam_completed": false,
               "exam_image": "image4.jpg",
-              "exam_domain_params": "10004"
+              "exam_domain_params": "10004",
+              "exam_duration":40
             }
           ]
         },
@@ -862,7 +935,8 @@
               "exam_content": "Kimyasal bağlar ve moleküler yapı öğrenilecek",
               "exam_completed": false,
               "exam_image": "image5.jpg",
-              "exam_domain_params": "10005"
+              "exam_domain_params": "10005",
+              "exam_duration":40
             }
           ]
         },
@@ -875,7 +949,8 @@
               "exam_content": "Elektrik ve manyetizma konuları öğrenilecek",
               "exam_completed": false,
               "exam_image": "image6.jpg",
-              "exam_domain_params": "10006"
+              "exam_domain_params": "10006",
+              "exam_duration":40
             }
           ]
         },
@@ -888,7 +963,8 @@
               "exam_content": "Osmanlı İmparatorluğu tarihi öğrenilecek",
               "exam_completed": false,
               "exam_image": "image7.jpg",
-              "exam_domain_params": "10007"
+              "exam_domain_params": "10007",
+              "exam_duration":40
             }
           ]
         },
@@ -901,7 +977,8 @@
               "exam_content": "Nüfus yapısı ve göç konuları öğrenilecek",
               "exam_completed": false,
               "exam_image": "image8.jpg",
-              "exam_domain_params": "10008"
+              "exam_domain_params": "10008",
+              "exam_duration":40
             }
           ]
         }
@@ -916,14 +993,16 @@
               "exam_content": "Sayılar ve matematiksel işlemler öğrenilecek",
               "exam_completed": false,
               "exam_image": "image1.jpg",
-              "exam_domain_params": "11001"
+              "exam_domain_params": "11001",
+              "exam_duration":40
             },
             {
               "exam_name": "Fonksiyonlar",
               "exam_content": "Fonksiyon kavramı ve grafikleri öğrenilecek",
               "exam_completed": false,
               "exam_image": "image2.jpg",
-              "exam_domain_params": "11002"
+              "exam_domain_params": "11002",
+              "exam_duration":40
             }
           ]
         },
@@ -936,14 +1015,16 @@
               "exam_content": "Edebiyat tarihi ve önemli yazarlar öğrenilecek",
               "exam_completed": false,
               "exam_image": "image3.jpg",
-              "exam_domain_params": "11003"
+              "exam_domain_params": "11003",
+              "exam_duration":40
             },
             {
               "exam_name": "Roman ve Hikaye",
               "exam_content": "Roman ve hikaye türleri öğrenilecek",
               "exam_completed": false,
               "exam_image": "image4.jpg",
-              "exam_domain_params": "11004"
+              "exam_domain_params": "11004",
+              "exam_duration":40
             }
           ]
         },
@@ -956,7 +1037,8 @@
               "exam_content": "Kimyasal reaksiyonlar ve denklemler öğrenilecek",
               "exam_completed": false,
               "exam_image": "image5.jpg",
-              "exam_domain_params": "11005"
+              "exam_domain_params": "11005",
+              "exam_duration":40
             }
           ]
         },
@@ -969,7 +1051,8 @@
               "exam_content": "Elektrik ve manyetizma konuları öğrenilecek",
               "exam_completed": false,
               "exam_image": "image6.jpg",
-              "exam_domain_params": "11006"
+              "exam_domain_params": "11006",
+              "exam_duration":40
             }
           ]
         },
@@ -982,7 +1065,8 @@
               "exam_content": "Türk İslam devletleri tarihi öğrenilecek",
               "exam_completed": false,
               "exam_image": "image7.jpg",
-              "exam_domain_params": "11007"
+              "exam_domain_params": "11007",
+              "exam_duration":40
             }
           ]
         },
@@ -995,7 +1079,8 @@
               "exam_content": "Nüfus yapısı ve göç konuları öğrenilecek",
               "exam_completed": false,
               "exam_image": "image8.jpg",
-              "exam_domain_params": "11008"
+              "exam_domain_params": "11008",
+              "exam_duration":40
             }
           ]
         },
@@ -1008,7 +1093,8 @@
               "exam_content": "Advanced English grammar and vocabulary will be covered",
               "exam_completed": false,
               "exam_image": "image9.jpg",
-              "exam_domain_params": "11009"
+              "exam_domain_params": "11009",
+              "exam_duration":40
             }
           ]
         }
@@ -1023,14 +1109,16 @@
               "exam_content": "Limit kavramı ve süreklilik öğrenilecek",
               "exam_completed": false,
               "exam_image": "image1.jpg",
-              "exam_domain_params": "12001"
+              "exam_domain_params": "12001",
+              "exam_duration":40
             },
             {
               "exam_name": "Türev ve İntegral",
               "exam_content": "Türev ve integral hesabı öğrenilecek",
               "exam_completed": false,
               "exam_image": "image2.jpg",
-              "exam_domain_params": "12002"
+              "exam_domain_params": "12002",
+              "exam_duration":40
             }
           ]
         },
@@ -1043,14 +1131,16 @@
               "exam_content": "Edebiyat tarihi ve önemli yazarlar öğrenilecek",
               "exam_completed": false,
               "exam_image": "image3.jpg",
-              "exam_domain_params": "12003"
+              "exam_domain_params": "12003",
+              "exam_duration":40
             },
             {
               "exam_name": "Roman ve Hikaye",
               "exam_content": "Roman ve hikaye türleri öğrenilecek",
               "exam_completed": false,
               "exam_image": "image4.jpg",
-              "exam_domain_params": "12004"
+              "exam_domain_params": "12004",
+              "exam_duration":40
             }
           ]
         },
@@ -1063,7 +1153,8 @@
               "exam_content": "Kimyasal reaksiyonlar ve denklemler öğrenilecek",
               "exam_completed": false,
               "exam_image": "image5.jpg",
-              "exam_domain_params": "12005"
+              "exam_domain_params": "12005",
+              "exam_duration":40
             }
           ]
         },
@@ -1076,7 +1167,8 @@
               "exam_content": "Elektrik ve manyetizma konuları öğrenilecek",
               "exam_completed": false,
               "exam_image": "image6.jpg",
-              "exam_domain_params": "12006"
+              "exam_domain_params": "12006",
+              "exam_duration":40
             }
           ]
         },
@@ -1089,7 +1181,8 @@
               "exam_content": "Türk İslam devletleri tarihi öğrenilecek",
               "exam_completed": false,
               "exam_image": "image7.jpg",
-              "exam_domain_params": "12007"
+              "exam_domain_params": "12007",
+              "exam_duration":40
             }
           ]
         },
@@ -1102,7 +1195,8 @@
               "exam_content": "Nüfus yapısı ve göç konuları öğrenilecek",
               "exam_completed": false,
               "exam_image": "image8.jpg",
-              "exam_domain_params": "12008"
+              "exam_domain_params": "12008",
+              "exam_duration":40
             }
           ]
         },
@@ -1115,7 +1209,8 @@
               "exam_content": "Advanced English grammar and vocabulary will be covered",
               "exam_completed": false,
               "exam_image": "image9.jpg",
-              "exam_domain_params": "12009"
+              "exam_domain_params": "12009",
+              "exam_duration":40
             }
           ]
         },
@@ -1128,7 +1223,8 @@
               "exam_content": "Genetik konuları ve genetik mühendislik öğrenilecek",
               "exam_completed": false,
               "exam_image": "image10.jpg",
-              "exam_domain_params": "12010"
+              "exam_domain_params": "12010",
+              "exam_duration":40
             }
           ]
         },
@@ -1141,7 +1237,8 @@
               "exam_content": "Dünya edebiyatının önemli eserleri öğrenilecek",
               "exam_completed": false,
               "exam_image": "image11.jpg",
-              "exam_domain_params": "12011"
+              "exam_domain_params": "12011",
+              "exam_duration":40
             }
           ]
         }
