@@ -11,6 +11,7 @@ export interface Exam{
     exam_completed: boolean;
     exam_image: string;
     exam_domain_params: string;
+    exam_duration:number;
 }
 
 export interface SubjectClass{
