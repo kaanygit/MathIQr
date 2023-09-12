@@ -8,7 +8,7 @@ import {FiSettings} from 'react-icons/fi'
 import { Avatar, Menu, MenuHandler, MenuItem, MenuList } from "@material-tailwind/react"
 import {RxAvatar} from 'react-icons/rx'
 import { signOut } from "next-auth/react"
-import { useEffect, useState } from "react"
+import { Fragment, useEffect, useState } from "react"
 
 const NavbarAuthentication:React.FC=()=>{
     const [currentDarkMode,setCurrentDarkMode]=useState<string|null>("");
@@ -39,6 +39,10 @@ const NavbarAuthentication:React.FC=()=>{
         }
     },[])
     return(
+        <Fragment>
+        <div className='bg-yellow-500 flex justify-center items-center w-full'>
+            <span>This application is in the development stage. To contribute, you can visit my github page.</span>
+        </div>
         <div className="w-full h-full mx-auto px-16 py-8 justify-center items-center text-center flex shadow ">
             <div className="flex w-full justify-center items-center text-2xl z-40">
                 <div className="flex-1 flex text-2xl z-40">
@@ -82,6 +86,7 @@ const NavbarAuthentication:React.FC=()=>{
                 </div>
             </div>
         </div>
+        </Fragment>
     )
 }
 

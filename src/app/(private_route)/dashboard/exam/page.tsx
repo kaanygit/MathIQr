@@ -5,13 +5,18 @@ import ClassJSONFile from '../../../../json/scholl-grades.json'
 import { Accordion, AccordionBody, AccordionHeader } from '@material-tailwind/react';
 import Link from 'next/link';
 
+export interface QuestionsContentInterface{
+    question_title:string;
+    question_answer:string;
+}
 export interface Exam{
     exam_name: string;
-    exam_content: string;
+    exam_content_title: string;
     exam_completed: boolean;
     exam_image: string;
     exam_domain_params: string;
     exam_duration:number;
+    questions_content:QuestionsContentInterface[];
 }
 
 export interface SubjectClass{
