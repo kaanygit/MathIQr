@@ -34,3 +34,4 @@ Uygulamamızın topluluk bölümünde aşağıdaki işlemleri yapabilirsiniz:
 ## Katkıda Bulunma
 
 Eğer bu projeye katkıda bulunmak veya hataları düzeltmek isterseniz, lütfen [GitHub deposuna](https://github.com/kaanygit/MathIQr) katkıda bulunun.
+
