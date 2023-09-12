@@ -1,7 +1,4 @@
 "use client"
-import { authOptions } from "@/app/api/auth/[...nextauth]/route";
-import { getServerSession } from "next-auth";
-import axios from "axios";
 import { getSession } from "next-auth/react";
 
 
@@ -12,7 +9,7 @@ const AdminRoutePage:React.FC=async()=>{
     const datas=await getSession();
     console.log(datas);
     return(
-        <section>
+        <section className="mx-auto w-full h-screen text-3xl font-bold text-blue-400 flex flex-col justify-center items-center  pb-10 " style={{width:"1000px"}}>
             Admin Rotası
         </section>
     )

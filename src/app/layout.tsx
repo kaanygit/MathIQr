@@ -6,7 +6,6 @@ import { Suspense} from 'react'
 
 import { authOptions } from './api/auth/[...nextauth]/route'
 import { getServerSession } from 'next-auth'
-import { useAppSelector } from '@/redux/store'
 import { ProviderStore } from '@/redux/provider'
 
 

@@ -3,7 +3,7 @@ import { SessionDataInterface } from '@/app/(private_route)/dashboard/profile/pa
 import { Spinner } from '@material-tailwind/react';
 import { signOut, useSession } from 'next-auth/react';
 import Link from 'next/link'
-import { useEffect, useState } from 'react';
+import { Fragment, useEffect, useState } from 'react';
 import {BiMath,BiMoon, BiSun} from 'react-icons/bi'
 
 const NavbarNotAuth:React.FC=()=>{
@@ -41,6 +41,10 @@ const NavbarNotAuth:React.FC=()=>{
     console.log(session?.user);
     console.log(datas);
     return(
+        <Fragment>
+        <div className='bg-yellow-500 flex justify-center items-center w-full'>
+            <span>This application is in the development stage. To contribute, you can visit my github page.</span>
+        </div>
         <nav className="w-full h-full mx-auto px-24 py-10 justify-center items-center text-center flex shadow">
             <div className="flex w-full justify-center items-center text-2xl">
                 <div className="flex-1 flex text-4xl">
@@ -58,6 +62,7 @@ const NavbarNotAuth:React.FC=()=>{
                 </div>
             </div>
         </nav>
+        </Fragment>
     )
 }
 
